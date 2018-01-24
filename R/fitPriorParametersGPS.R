@@ -23,17 +23,22 @@ fitPriorParametersGPS <- function(a, b, c, d,
                                   w = 0.1) {
   E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
 
-  # function taken from the PhViD library for maximizing the likelihood function
-  # for finding the hyperparameters
-  p <- suppressWarnings(nlm(PhViD::.lik2NB, p = c(alpha1, beta1, alpha2, beta2, w),
-                            n11 = a, E = E, iterlim = 500))
-
+  # maximizing the log likelihood 
+  res <- suppressWarnings(
+          optim(par = c(alpha1, beta1, alpha2, beta2, w), 
+                fn = pvm::loglikelihood2NegativeBinomial, 
+                a = a, E = E, 
+                method="L-BFGS-B",
+                lower = 0.0, 
+                upper = c(Inf, Inf, Inf, Inf, 1.0))
+  )
+  
   # unpack the prior parameters
   list(
-    alpha1 = p$estimate[1],
-    beta1  = p$estimate[2],
-    alpha2 = p$estimate[3],
-    beta2  = p$estimate[4],
-    w      = p$estimate[5]
+    alpha1 = res$par[1],
+    beta1  = res$par[2],
+    alpha2 = res$par[3],
+    beta2  = res$par[4],
+    w      = res$par[5]
   )
 }
