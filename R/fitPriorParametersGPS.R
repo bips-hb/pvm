@@ -18,9 +18,9 @@
 #' @return the prior parameters
 #' @export
 fitPriorParametersGPS <- function(a, b, c, d,
-                                  alpha1 = 0.2, beta1 = 0.06,
-                                  alpha2 = 1.4, beta2 = 1.8,
-                                  w = 0.1) {
+                                  alpha1 = 0.2, beta1 = 0.1,
+                                  alpha2 = 2.0, beta2 = 4,
+                                  w = 1/3) {
   E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
 
   # maximizing the log likelihood 
@@ -29,7 +29,7 @@ fitPriorParametersGPS <- function(a, b, c, d,
                 fn = pvm::loglikelihood2NegativeBinomial, 
                 a = a, E = E, 
                 method="L-BFGS-B",
-                lower = 0.0, 
+                lower = c(0.0, 0.0, 0.0, 0.0, 0.0), 
                 upper = c(Inf, Inf, Inf, Inf, 1.0))
   )
   

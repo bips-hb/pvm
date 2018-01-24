@@ -11,7 +11,7 @@
 #' @param E A vector (of the same length as \code{a}) with the number of reports 
 #'          one would expect under the assumption of 'independence'
 #' 
-#' @return The log-likelihood 
+#' @return The negative log-likelihood (i.e., -1 * log-likelihood)
 #'
 #' @examples 
 #' alpha1 <- 0.2
