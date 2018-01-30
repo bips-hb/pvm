@@ -36,6 +36,14 @@ The initial guess for the parameter values are set the same as by DuMouchel (199
 \details{
 The function is based on the code from the \code{PhViD} package.
 }
+\examples{
+a <- srdata$tables$a 
+b <- srdata$tables$b 
+c <- srdata$tables$c 
+d <- srdata$tables$d 
+fitPriorParametersGPS(a, b, c, d) 
+#[1]  
+}
 \references{
 DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
             with an Application to the FDA Spontaneous Reporting System. 

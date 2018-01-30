@@ -22,7 +22,7 @@ The negative log-likelihood (i.e., -1 * log-likelihood)
 Returns the log-likelihood of the bimodal negative binomial model 
 used by the Gamma Poisson Shrinker (GPS), see function \code{\link{GPS}}.
 The function is written such that it can be used by the base function
-\code{\link{nlm}}.
+\code{\link{optim}}.
 }
 \examples{
 alpha1 <- 0.2

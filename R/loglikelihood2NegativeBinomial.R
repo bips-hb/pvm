@@ -3,7 +3,7 @@
 #' Returns the log-likelihood of the bimodal negative binomial model 
 #' used by the Gamma Poisson Shrinker (GPS), see function \code{\link{GPS}}.
 #' The function is written such that it can be used by the base function
-#' \code{\link{nlm}}.
+#' \code{\link{optim}}.
 #' 
 #' @param p A vector with the parameters (\code{alpha1}, \code{beta1}, 
 #'          \code{alpha2}, \code{beta2} and \code{w}, in that order)
@@ -39,8 +39,12 @@ loglikelihood2NegativeBinomial <- function(p, a, E) {
   
   -sum(
     log(
-      w * dnbinom(a, size = alpha1, prob = beta1 / (beta1 + E)) + 
-        (1 - w) * dnbinom(a, size = alpha2, prob = beta2 / (beta2 + E))
+      pvm::dbinbinom(a, 
+                     size1 = alpha1, 
+                     prob1 = beta1 / (beta1 + E), 
+                     size2 = alpha2, 
+                     prob2 = beta2 / (beta2 + E),
+                     w = w)
     )
   )
 }

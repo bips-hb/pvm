@@ -21,22 +21,41 @@
 #'             https://doi.org/10.1080/00031305.1999.10474456
 #' 
 #' @return A list with the prior parameters
+#' @examples 
+#' a <- srdata$tables$a 
+#' b <- srdata$tables$b 
+#' c <- srdata$tables$c 
+#' d <- srdata$tables$d 
+#' fitPriorParametersGPS(a, b, c, d) 
+#' #[1]  
 #' @export
 fitPriorParametersGPS <- function(a, b, c, d,
                                   alpha1 = 0.2, beta1 = 0.1,
                                   alpha2 = 2.0, beta2 = 4,
                                   w = 1/3) {
+  
+  # to overcome integer overflow
+  a <- as.numeric(a)
+  b <- as.numeric(b)
+  c <- as.numeric(c)
+  d <- as.numeric(d) 
+  
   E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
-
+  
+  # remove cases where E is zero
+  a <- a[E != 0]
+  E <- E[E != 0]
+  
   # maximizing the log likelihood 
   res <- suppressWarnings(
           optim(par = c(alpha1, beta1, alpha2, beta2, w), 
                 fn = pvm::loglikelihood2NegativeBinomial, 
-                a = a, E = E, 
-                method="L-BFGS-B",
-                lower = c(0.0, 0.0, 0.0, 0.0, 0.0), 
-                upper = c(Inf, Inf, Inf, Inf, 1.0))
-  )
+                a = a, E = E))
+  #               , 
+  #               method="L-BFGS-B",
+  #               lower = .Machine$double.eps, 
+  #               upper = c(Inf, Inf, Inf, Inf, 1.0))
+  # )
   
   # unpack the prior parameters
   list(
