@@ -16,7 +16,7 @@ loglikelihood2NegativeBinomial(p, a, E)
 one would expect under the assumption of 'independence'}
 }
 \value{
-The log-likelihood
+The negative log-likelihood (i.e., -1 * log-likelihood)
 }
 \description{
 Returns the log-likelihood of the bimodal negative binomial model 
@@ -37,4 +37,5 @@ E <- c(3.4, 0.5, 10, 0.5)
 p <- c(alpha1, beta1, alpha2, beta2, w)
 loglikelihood2NegativeBinomial(p, a, E)
 #[1] 16.80512
+
 }

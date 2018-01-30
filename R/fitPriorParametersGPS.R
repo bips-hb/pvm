@@ -5,17 +5,22 @@
 #'
 #' The function is based on the code from the \code{PhViD} package.
 #'
-#' @param a a list that contains the counts of the upper left corners of the tables
-#' @param b a list that contains the counts of the lower left corners of the tables
-#' @param c a list that contains the counts of the upper right corners of the tables
-#' @param d a list that contains the counts of the lower right corners of the tables
-#' @param alpha1 Prior parameter \eqn{\alpha_1} (Default = .2)
-#' @param beta1 Prior parameter \eqn{\beta_1} (Default = .06)
-#' @param alpha2 Prior parameter \eqn{\alpha_2} (Default = 1.4)
-#' @param beta2 Prior parameter \eqn{\beta_2} (Default = 1.8)
-#' @param w Prior parameter \eqn{w} (Default = .1)
+#' @param a A list that contains the counts of the upper left corners of the tables
+#' @param b A list that contains the counts of the lower left corners of the tables
+#' @param c A list that contains the counts of the upper right corners of the tables
+#' @param d A list that contains the counts of the lower right corners of the tables
+#' @param alpha1 Prior parameter \eqn{\alpha_1} (Default = 0.2)
+#' @param beta1 Prior parameter \eqn{\beta_1} (Default = 0.1)
+#' @param alpha2 Prior parameter \eqn{\alpha_2} (Default = 2.0)
+#' @param beta2 Prior parameter \eqn{\beta_2} (Default = 4.0)
+#' @param w Prior parameter \eqn{w} (Default = 1/3)
 #'
-#' @return the prior parameters
+#' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
+#'             with an Application to the FDA Spontaneous Reporting System. 
+#'             The American Statistician, 53(3), 177–190. 
+#'             https://doi.org/10.1080/00031305.1999.10474456
+#' 
+#' @return A list with the prior parameters
 #' @export
 fitPriorParametersGPS <- function(a, b, c, d,
                                   alpha1 = 0.2, beta1 = 0.1,

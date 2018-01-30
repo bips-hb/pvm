@@ -4,30 +4,30 @@
 \alias{fitPriorParametersGPS}
 \title{Prior Parameter Fit for the GPS}
 \usage{
-fitPriorParametersGPS(a, b, c, d, alpha1 = 0.2, beta1 = 0.06,
-  alpha2 = 1.4, beta2 = 1.8, w = 0.1)
+fitPriorParametersGPS(a, b, c, d, alpha1 = 0.2, beta1 = 0.1, alpha2 = 2,
+  beta2 = 4, w = 1/3)
 }
 \arguments{
-\item{a}{a list that contains the counts of the upper left corners of the tables}
+\item{a}{A list that contains the counts of the upper left corners of the tables}
 
-\item{b}{a list that contains the counts of the lower left corners of the tables}
+\item{b}{A list that contains the counts of the lower left corners of the tables}
 
-\item{c}{a list that contains the counts of the upper right corners of the tables}
+\item{c}{A list that contains the counts of the upper right corners of the tables}
 
-\item{d}{a list that contains the counts of the lower right corners of the tables}
+\item{d}{A list that contains the counts of the lower right corners of the tables}
 
-\item{alpha1}{Prior parameter \eqn{\alpha_1} (Default = .2)}
+\item{alpha1}{Prior parameter \eqn{\alpha_1} (Default = 0.2)}
 
-\item{beta1}{Prior parameter \eqn{\beta_1} (Default = .06)}
+\item{beta1}{Prior parameter \eqn{\beta_1} (Default = 0.1)}
 
-\item{alpha2}{Prior parameter \eqn{\alpha_2} (Default = 1.4)}
+\item{alpha2}{Prior parameter \eqn{\alpha_2} (Default = 2.0)}
 
-\item{beta2}{Prior parameter \eqn{\beta_2} (Default = 1.8)}
+\item{beta2}{Prior parameter \eqn{\beta_2} (Default = 4.0)}
 
-\item{w}{Prior parameter \eqn{w} (Default = .1)}
+\item{w}{Prior parameter \eqn{w} (Default = 1/3)}
 }
 \value{
-the prior parameters
+A list with the prior parameters
 }
 \description{
 Fits the prior parameters to the data for the Gamma Poisson Shrinker (GPS).
@@ -35,4 +35,10 @@ The initial guess for the parameter values are set the same as by DuMouchel (199
 }
 \details{
 The function is based on the code from the \code{PhViD} package.
+}
+\references{
+DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
+            with an Application to the FDA Spontaneous Reporting System. 
+            The American Statistician, 53(3), 177–190. 
+            https://doi.org/10.1080/00031305.1999.10474456
 }
