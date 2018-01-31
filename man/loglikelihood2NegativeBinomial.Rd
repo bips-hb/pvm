@@ -39,3 +39,9 @@ loglikelihood2NegativeBinomial(p, a, E)
 #[1] 16.80512
 
 }
+\references{
+DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
+            with an Application to the FDA Spontaneous Reporting System. 
+            The American Statistician, 53(3), 177–190. 
+            https://doi.org/10.1080/00031305.1999.10474456
+}

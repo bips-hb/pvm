@@ -11,10 +11,15 @@
 #' The function is based on a function in the \code{PhVid} Packages (GPS)
 #'
 #' @inheritParams createTable
-#' @param prior List that contains the prior parameters (see function \code{fitPriorParametersGPS})
-#' @param alpha Value between \eqn{(0,1)}. If set, the lower endpoint that confidence interval is returned
+#' @param prior List that contains the prior parameters (see function \code{\link{fitPriorParametersGPS}})
+#' @param alpha Value between \eqn{(0,1)}. If set, the lower endpoint of that confidence interval is returned
 #'
 #' @return a tibble
+#' 
+#' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
+#'             with an Application to the FDA Spontaneous Reporting System. 
+#'             The American Statistician, 53(3), 177–190. 
+#'             https://doi.org/10.1080/00031305.1999.10474456
 #' @export
 GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL) {
   alpha1 <- prior$alpha1
@@ -23,14 +28,20 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
   beta2  <- prior$beta2
   w      <- prior$w
 
-  expected_count <- ((a + b)*(a + c)) / (a + b + c + d)
+  E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
 
-  Q <- w * dnbinom(a, size = alpha1, prob = beta1/(beta1 + expected_count))/(w * dnbinom(a, size = alpha1, prob = beta1/(beta1 + expected_count)) + (1 - w) * dnbinom(a, size = alpha2, prob = beta2/(beta2 + expected_count)))
-  EBGM <- log(2)^(-1) * (Q * (digamma(alpha1 + a) - log(beta1 + expected_count)) + (1 - Q) * (digamma(alpha2 + a) - log(beta2 + expected_count)))
+  Q <- w * dnbinom(a, size = alpha1, prob = beta1 / (beta1 + E)) /
+    dbinbinom(a, size1 = alpha1, prob1 = beta1 / (beta1 + E), 
+                 size2 = alpha2, prob2 = beta2 / (beta2 + E), w)
+              
+  EBlog2 <- (Q * (digamma(alpha1 + a) - log(beta1 + E)) + 
+             (1 - Q) * (digamma(alpha2 + a) - log(beta2 + E))) / log(2) 
+  
+  EBGM <- 2^EBlog2
 
   if (is.null(alpha)) {
     return(EBGM)
   } else {
-    return(log(PhViD::.QuantileDuMouchel(alpha, Q, alpha1 + a, beta1 + expected_count, alpha2 + a, beta2 + expected_count), 2))
+    return(log2(PhViD::.QuantileDuMouchel(alpha, Q, alpha1 + a, beta1 + E, alpha2 + a, beta2 + E)))
   }
 }

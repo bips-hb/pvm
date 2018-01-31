@@ -15,9 +15,9 @@ GPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
 
 \item{d}{Count in the lower right corner of the table}
 
-\item{prior}{List that contains the prior parameters (see function \code{fitPriorParametersGPS})}
+\item{prior}{List that contains the prior parameters (see function \code{\link{fitPriorParametersGPS}})}
 
-\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint that confidence interval is returned}
+\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint of that confidence interval is returned}
 }
 \value{
 a tibble
@@ -33,4 +33,10 @@ DuMouchel (1999) to a 2 x 2 table of the form
 }
 \details{
 The function is based on a function in the \code{PhVid} Packages (GPS)
+}
+\references{
+DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
+            with an Application to the FDA Spontaneous Reporting System. 
+            The American Statistician, 53(3), 177–190. 
+            https://doi.org/10.1080/00031305.1999.10474456
 }

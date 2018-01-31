@@ -33,16 +33,28 @@ A list with the prior parameters
 Fits the prior parameters to the data for the Gamma Poisson Shrinker (GPS).
 The initial guess for the parameter values are set the same as by DuMouchel (1999).
 }
-\details{
-The function is based on the code from the \code{PhViD} package.
-}
 \examples{
 a <- srdata$tables$a 
 b <- srdata$tables$b 
 c <- srdata$tables$c 
 d <- srdata$tables$d 
+
 fitPriorParametersGPS(a, b, c, d) 
-#[1]  
+
+# $alpha1
+# [1] 98.28478
+#
+# $beta1
+# [1] 16.48081
+#
+# $alpha2
+# [1] 16.61439
+#
+# $beta2
+# [1] 18.00642
+#
+# $w
+# [1] 0.06132586
 }
 \references{
 DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 

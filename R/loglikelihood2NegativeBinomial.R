@@ -13,6 +13,11 @@
 #' 
 #' @return The negative log-likelihood (i.e., -1 * log-likelihood)
 #'
+#' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
+#'             with an Application to the FDA Spontaneous Reporting System. 
+#'             The American Statistician, 53(3), 177–190. 
+#'             https://doi.org/10.1080/00031305.1999.10474456
+#'             
 #' @examples 
 #' alpha1 <- 0.2
 #' beta1 <- 0.06

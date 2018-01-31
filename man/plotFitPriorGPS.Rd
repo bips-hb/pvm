@@ -4,7 +4,8 @@
 \alias{plotFitPriorGPS}
 \title{Plot the GPS Prior Fit}
 \usage{
-plotFitPriorGPS(a, b, c, d, alpha1, beta1, alpha2, beta2, w, precision = 100)
+plotFitPriorGPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d),
+  bins = 50, precision = 100, xmin = 0, xmax = 10)
 }
 \arguments{
 \item{a}{Count in the upper left corner of the table}
@@ -15,13 +16,13 @@ plotFitPriorGPS(a, b, c, d, alpha1, beta1, alpha2, beta2, w, precision = 100)
 
 \item{d}{Count in the lower right corner of the table}
 
+\item{precision}{The number of sample points used for plotting (Default = 100)}
+
 \item{alpha1, beta1}{The rate and shape parameter for the first mode}
 
 \item{alpha2, beta2}{The rate and shape parameter for the second mode}
 
 \item{w}{The weight of the first mode (must lie in \eqn{[0,1]})}
-
-\item{precision}{The number of sample points used for plotting (Default = 100)}
 }
 \description{
 Plots the fit of the prior distribution of the GPS to 
