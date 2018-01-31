@@ -4,7 +4,8 @@
 \alias{BCPNN}
 \title{Bayesian Confidence Propagation Neural Network (BCPNN)}
 \usage{
-BCPNN(a, b, c, d, alpha = NULL)
+BCPNN(a, b, c, d, alpha = NULL, version = "original", mc_estimate = FALSE,
+  mc_runs = 1000)
 }
 \arguments{
 \item{a}{Count in the upper left corner of the table}
@@ -16,19 +17,76 @@ BCPNN(a, b, c, d, alpha = NULL)
 \item{d}{Count in the lower right corner of the table}
 
 \item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint that confidence interval is returned}
+
+\item{version}{Version of the BCPNN used. Can either be \code{'original'} (Default) 
+for the BCPNN as proposed orignally by Bate et al. (1998), or 
+\code{'alternative'} for the NN as proposed by 
+Norén et al. (2006).}
+
+\item{mc_estimate}{The value is estimated using Monte Carlo runs (Default = \code{FALSE}). 
+Only used when \code{version = 'alternative'}.}
+
+\item{mc_runs}{The number of Monte Carlo runs used to estimate the credible interval. 
+(Default: 1000). Only used when \code{version = 'alternative'}.}
 }
 \value{
-The maximum aposteriori estimate of the information component or the lower endpoint of the approximate credible interval
+The maximum aposteriori estimate of the information component (IC) or 
+        the lower endpoint of the approximate credible interval
 }
 \description{
-Applies the BPCNN to a 2 x 2 table of the form
+Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
+ to a 2 x 2 tables of the form
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr
   not drug \tab \code{b} \tab \code{d}
 }
+There are two versions of the BCPNN: 
+\itemize{
+  \item{\code{'original'} - The original version proposed by Bate et al. (1998)}
+  \item{\code{'alternative'} - The BCPNN as proposed by Norén et al. (2006)}
+}
 }
 \details{
-Based on the \code{BCPNN} function from the \code{PhViD}
-package.
+The implementation of this function is based on the implementation in the
+\code{PhViD} package.
+}
+\examples{
+# get the tables
+a <- srdata$tables$a
+b <- srdata$tables$b
+c <- srdata$tables$c
+d <- srdata$tables$d
+
+# Applying the original BCPNN: 
+BCPNN(a, b, c, d)
+# [1]  0.043876264 -0.486132538 -0.884438724 -0.306053947 ...
+
+# Getting the lower end point of the 95\% confidence intervaL: 
+BCPNN(a, b, c, d, alpha = 0.05) 
+# [1]  0.001484129 -4.790332308 -1.114858204 -0.579565135 ...
+
+# Using the alternative version: 
+BCPNN(a, b, c, d, version = 'alternative')
+# [1]  4.382378e-02  1.021490e-05 -8.805061e-01 -2.981655e-01 ...
+
+# Getting the lower end points of the 95\% confidence interval 
+# using the alternative version. The estimates are based on 
+# 10,000 Monte Carlo samples:
+BCPNN(a, b, c, d, version = 'alternative', 
+      alpha = 0.05, mc_estimate = TRUE, mc_runs = 10^4)
+# [1]  0.03635975 -6.86648303 -1.07120957 -0.49773367 ...
+}
+\references{
+Bate, A., Lindquist, M., Edwards, I. R., Olsson, S., Orre, R., 
+            Lansner, A., & De Freitas, R. M. (1998). A Bayesian neural 
+            network method for adverse drug reaction signal generation. 
+            European Journal of Clinical Pharmacology, 54(4), 315–321. 
+            http://doi.org/10.1007/s002280050466
+
+            Norén, G. N., Bate, A., Orre, R., & Edwards, I. R. (2006). 
+            Extending the methods used to screen the WHO drug safety 
+            database towards analysis of complex associations and 
+            improved accuracy for rare events. Statistics in Medicine, 
+            25(21), 3740–3757. http://doi.org/10.1002/sim.2473
 }

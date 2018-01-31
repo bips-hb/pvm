@@ -11,7 +11,8 @@ Depends:
 	R (>= 3.2.3), 
 	Rcpp,
 	glmnet,
-	ggplot2
+	ggplot2, 
+	MCMCpack
 LinkingTo: Rcpp
 License: GPL-3
 Encoding: UTF-8
