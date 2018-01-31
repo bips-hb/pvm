@@ -8,8 +8,6 @@
 #'   not drug \tab \code{b} \tab \code{d}
 #' }
 #'
-#' The function is based on a function in the \code{PhVid} Packages (GPS)
-#'
 #' @inheritParams createTable
 #' @param prior List that contains the prior parameters (see function \code{\link{fitPriorParametersGPS}})
 #' @param alpha Value between \eqn{(0,1)}. If set, the lower endpoint of that confidence interval is returned
@@ -20,6 +18,12 @@
 #'             with an Application to the FDA Spontaneous Reporting System. 
 #'             The American Statistician, 53(3), 177–190. 
 #'             https://doi.org/10.1080/00031305.1999.10474456
+#'             
+#'             DuMouchel, W., & Pregibon, D. (2001). Empirical bayes screening 
+#'             for multi-item associations. Proceedings of the Seventh ACM 
+#'             SIGKDD International Conference on Knowledge Discovery and 
+#'             Data Mining - KDD ’01, (October), 67–76. 
+#'             http://doi.org/10.1145/502512.502526
 #' @export
 GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL) {
   alpha1 <- prior$alpha1
@@ -42,6 +46,25 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
   if (is.null(alpha)) {
     return(EBGM)
   } else {
-    return(log2(PhViD::.QuantileDuMouchel(alpha, Q, alpha1 + a, beta1 + E, alpha2 + a, beta2 + E)))
+    # estimate the lower end point of the (1 - alpha)*100 confidence interval
+    n_pairs <- length(EBGM)
+    EBlow <- rep(NA, n_pairs) # allocate memory
+    
+    # loop over all pairs
+    for (p in 1:n_pairs) {
+      res <- uniroot(GPSConfidenceInterval, 
+                     interval = c(-1000, max(EBGM)),
+                     a = a[p],
+                     E = E[p],
+                     alpha = alpha,
+                     alpha1 = alpha1,
+                     beta1 = beta1,
+                     alpha2 = alpha2,
+                     beta2 = beta2,
+                     w = w)
+      EBlow[p] <- res$root
+    }
+    
+    return(EBlow)
   }
 }

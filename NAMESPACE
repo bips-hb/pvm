@@ -3,6 +3,7 @@
 export(BCPNN)
 export(BCPNN2)
 export(GPS)
+export(GPSConfidenceInterval)
 export(LASSO)
 export(PRR)
 export(PoissonTest)

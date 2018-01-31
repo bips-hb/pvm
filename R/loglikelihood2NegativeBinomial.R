@@ -18,6 +18,12 @@
 #'             The American Statistician, 53(3), 177–190. 
 #'             https://doi.org/10.1080/00031305.1999.10474456
 #'             
+#'             DuMouchel, W., & Pregibon, D. (2001). Empirical bayes screening 
+#'             for multi-item associations. Proceedings of the Seventh ACM 
+#'             SIGKDD International Conference on Knowledge Discovery and 
+#'             Data Mining - KDD ’01, (October), 67–76. 
+#'             http://doi.org/10.1145/502512.502526
+#'             
 #' @examples 
 #' alpha1 <- 0.2
 #' beta1 <- 0.06
