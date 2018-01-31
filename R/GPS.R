@@ -34,10 +34,10 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
     dbinbinom(a, size1 = alpha1, prob1 = beta1 / (beta1 + E), 
                  size2 = alpha2, prob2 = beta2 / (beta2 + E), w)
               
-  EBlog2 <- (Q * (digamma(alpha1 + a) - log(beta1 + E)) + 
-             (1 - Q) * (digamma(alpha2 + a) - log(beta2 + E))) / log(2) 
+  EBlog <- (Q * (digamma(alpha1 + a) - log(beta1 + E)) + 
+             (1 - Q) * (digamma(alpha2 + a) - log(beta2 + E))) 
   
-  EBGM <- 2^EBlog2
+  EBGM <- exp(EBlog)
 
   if (is.null(alpha)) {
     return(EBGM)
