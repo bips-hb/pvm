@@ -1,12 +1,15 @@
 Package: pvm
+Type: Package
 Title: PharmacoVigilance Methods 
 Version: 0.1
 Date: 2018-01-30
+Authors@R: c(person("Louis", "Dijkstra", role = c("aut", "cre"), 
+                      email = "dijkstra@leibniz-bips.de"), 
+             person("Marco", "Garling", role = "ctb"))
 Author: Louis Dijkstra [aut, cre], Marco Garling [ctb]
 Maintainer: Louis Dijkstra <dijkstra@leibniz-bips.de>
 Description: A collection of methods used in the field 
 	of pharmacovigilance
-Imports: 
 Depends: 
 	R (>= 3.2.3), 
 	Rcpp,

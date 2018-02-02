@@ -2,11 +2,8 @@
 #'
 #' Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
 #'  to a 2 x 2 tables of the form
-#' \tabular{lcc}{
-#'    \tab event \tab not event\cr
-#'   drug \tab \code{a} \tab \code{c}\cr
-#'   not drug \tab \code{b} \tab \code{d}
-#' }
+#' @template table
+#' @templateVar name {Bayesian Confidence Propagation Neural Network (BCPNN)}
 #' There are two versions of the BCPNN: 
 #' \itemize{
 #'   \item{\code{'original'} - The original version proposed by Bate et al. (1998)}

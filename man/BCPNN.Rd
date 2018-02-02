@@ -36,20 +36,15 @@ The maximum aposteriori estimate of the information component (IC) or
 \description{
 Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
  to a 2 x 2 tables of the form
+
+Applies the 
+{Bayesian Confidence Propagation Neural Network (BCPNN)}
+to 2 x 2 tables of the form: 
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr
   not drug \tab \code{b} \tab \code{d}
 }
-There are two versions of the BCPNN: 
-\itemize{
-  \item{\code{'original'} - The original version proposed by Bate et al. (1998)}
-  \item{\code{'alternative'} - The BCPNN as proposed by Norén et al. (2006)}
-}
-}
-\details{
-The implementation of this function is based on the implementation in the
-\code{PhViD} package.
 }
 \examples{
 # get the tables
