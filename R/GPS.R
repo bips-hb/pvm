@@ -32,6 +32,12 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
   beta2  <- prior$beta2
   w      <- prior$w
 
+  # to overcome possible integer overflow later
+  a <- as.numeric(a)
+  b <- as.numeric(b)
+  c <- as.numeric(c)
+  d <- as.numeric(d) 
+
   E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
 
   Q <- w * dnbinom(a, size = alpha1, prob = beta1 / (beta1 + E)) /
