@@ -8,11 +8,18 @@
 #' }
 #'
 #' @inheritParams createTable
-#' @param E The mean of the Poisson distribution under \eqn{H0}
 #'
 #' @return p-value
 #' @export
-PoissonTest <- function(a, b, c, d, E = ((a + b)*(a + c)) / (a + b + c + d)) {
+PoissonTest <- function(a, b, c, d) {
+  # to overcome possible integer overflow later
+  a <- as.numeric(a)
+  b <- as.numeric(b)
+  c <- as.numeric(c)
+  d <- as.numeric(d) 
+
+  E = ((a + b)*(a + c)) / (a + b + c + d)
+
   mapply(
     function(k, r) return(poisson.test(k, r = r, alternative = "greater")$p.value),
     k = a,
