@@ -136,7 +136,7 @@ BCPNN <- function(a, b, c, d, alpha = NULL,
     mapply(
       function(gamma11, gamma10, gamma01, gamma00) {
         # sample from the posterior distribution
-        p <- rdirichlet(mc_runs, c(gamma11,
+        p <- MCMCpack::rdirichlet(mc_runs, c(gamma11,
                                    gamma10,
                                    gamma01,
                                    gamma00))
