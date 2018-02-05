@@ -59,7 +59,7 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
     # loop over all pairs
     for (p in 1:n_pairs) {
       res <- uniroot(GPSConfidenceInterval, 
-                     interval = c(-1000, max(EBGM)),
+                     interval = c(-1000, min(10^5, max(EBGM))),
                      a = a[p],
                      E = E[p],
                      alpha = alpha,
