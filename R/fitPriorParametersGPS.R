@@ -69,7 +69,9 @@ fitPriorParametersGPS <- function(a, b, c, d,
   res <- suppressWarnings(
     optim(par = c(alpha1, beta1, alpha2, beta2, w), 
                 fn = pvm::loglikelihood2NegativeBinomial, 
-                a = a, E = E)
+                a = a, E = E,
+                lower = .Machine$double.eps,
+                upper = c(Inf, Inf, Inf, Inf, 1.0))
     )
    
   # unpack the prior parameters
