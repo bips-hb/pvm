@@ -5,7 +5,7 @@
 \title{Prior Parameter Fit for the GPS}
 \usage{
 fitPriorParametersGPS(a, b, c, d, alpha1 = 0.2, beta1 = 0.1, alpha2 = 2,
-  beta2 = 4, w = 1/3)
+  beta2 = 4, w = 1/3, maxiter = 500)
 }
 \arguments{
 \item{a}{A list that contains the counts of the upper left corners of the tables}
@@ -25,6 +25,8 @@ fitPriorParametersGPS(a, b, c, d, alpha1 = 0.2, beta1 = 0.1, alpha2 = 2,
 \item{beta2}{Prior parameter \eqn{\beta_2} (Default = 4.0)}
 
 \item{w}{Prior parameter \eqn{w} (Default = 1/3)}
+
+\item{maxiter}{Maximum number of iterations (Default = 500)}
 }
 \value{
 A list with the prior parameters

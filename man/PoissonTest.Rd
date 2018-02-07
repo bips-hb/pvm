@@ -4,7 +4,7 @@
 \alias{PoissonTest}
 \title{Test of the Poisson Mean}
 \usage{
-PoissonTest(a, b, c, d, E = ((a + b) * (a + c))/(a + b + c + d))
+PoissonTest(a, b, c, d)
 }
 \arguments{
 \item{a}{Count in the upper left corner of the table}
@@ -14,8 +14,6 @@ PoissonTest(a, b, c, d, E = ((a + b) * (a + c))/(a + b + c + d))
 \item{c}{Count in the upper right corner of the table}
 
 \item{d}{Count in the lower right corner of the table}
-
-\item{E}{The mean of the Poisson distribution under \eqn{H0}}
 }
 \value{
 p-value

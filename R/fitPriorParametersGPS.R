@@ -12,6 +12,7 @@
 #' @param alpha2 Prior parameter \eqn{\alpha_2} (Default = 2.0)
 #' @param beta2 Prior parameter \eqn{\beta_2} (Default = 4.0)
 #' @param w Prior parameter \eqn{w} (Default = 1/3)
+#' @param maxiter Maximum number of iterations (Default = 500)
 #' 
 #' @return A list with the prior parameters
 #' 
@@ -51,7 +52,8 @@
 fitPriorParametersGPS <- function(a, b, c, d,
                                   alpha1 = 0.2, beta1 = 0.1,
                                   alpha2 = 2.0, beta2 = 4,
-                                  w = 1/3) {
+                                  w = 1/3,
+                                  maxiter = 500) {
   
   # to overcome possible integer overflow later
   a <- as.numeric(a)
@@ -60,26 +62,22 @@ fitPriorParametersGPS <- function(a, b, c, d,
   d <- as.numeric(d) 
   
   E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
-  
-  # remove cases where E is zero
-  a <- a[E != 0]
-  E <- E[E != 0]
-  
+
   # maximizing the log likelihood 
   res <- suppressWarnings(
-    optim(par = c(alpha1, beta1, alpha2, beta2, w), 
-                fn = pvm::loglikelihood2NegativeBinomial, 
-                a = a, E = E,
-                lower = .Machine$double.eps,
-                upper = c(Inf, Inf, Inf, Inf, 1.0))
-    )
+      nlm(loglikelihood2NegativeBinomial, 
+        p = c(alpha1, beta1, alpha2, beta2, w), 
+        a = a, 
+        E = E, 
+        iterlim = maxiter)
+  )
    
   # unpack the prior parameters
   list(
-    alpha1 = res$par[1],
-    beta1  = res$par[2],
-    alpha2 = res$par[3],
-    beta2  = res$par[4],
-    w      = res$par[5]
+    alpha1 = res$estimate[1],
+    beta1  = res$estimate[2],
+    alpha2 = res$estimate[3],
+    beta2  = res$estimate[4],
+    w      = res$estimate[5]
   )
 }

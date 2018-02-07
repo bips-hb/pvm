@@ -12,7 +12,8 @@ Depends:
 	Rcpp,
 	glmnet,
 	ggplot2, 
-	MCMCpack
+	MCMCpack,
+	PhViD
 LinkingTo: Rcpp
 License: GPL-3
 Encoding: UTF-8

@@ -53,24 +53,12 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
     return(EBGM)
   } else {
     # estimate the lower end point of the (1 - alpha)*100 confidence interval
-    n_pairs <- length(EBGM)
-    EBlow <- rep(NA, n_pairs) # allocate memory
-    
-    # loop over all pairs
-    for (p in 1:n_pairs) {
-      res <- uniroot(GPSConfidenceInterval, 
-                     interval = c(0, min(10^5, max(EBGM))),
-                     a = a[p],
-                     E = E[p],
-                     alpha = alpha,
-                     alpha1 = alpha1,
-                     beta1 = beta1,
-                     alpha2 = alpha2,
-                     beta2 = beta2,
-                     w = w)
-      EBlow[p] <- res$root
-    }
-    
+    EBlow <- PhViD::.QuantileDuMouchel(alpha, 
+                                       Q, 
+                                       alpha1 + a, 
+                                       beta1 + E, 
+                                       alpha2 + a, 
+                                       beta2 + E)
     return(EBlow)
   }
 }
