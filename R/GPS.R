@@ -52,13 +52,15 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
   if (is.null(alpha)) {
     return(EBGM)
   } else {
+    EBlow <- EBGM 
+    
     # estimate the lower end point of the (1 - alpha)*100 confidence interval
-    EBlow <- PhViD::.QuantileDuMouchel(alpha, 
-                                       Q, 
-                                       alpha1 + a, 
-                                       beta1 + E, 
-                                       alpha2 + a, 
-                                       beta2 + E)
+    EBlow[!is.na(EBlow)] <- PhViD::.QuantileDuMouchel(alpha, 
+                                       Q[!is.na(EBlow)], 
+                                       alpha1 + a[!is.na(EBlow)], 
+                                       beta1 + E[!is.na(EBlow)], 
+                                       alpha2 + a[!is.na(EBlow)], 
+                                       beta2 + E[!is.na(EBlow)])
     return(EBlow)
   }
 }
