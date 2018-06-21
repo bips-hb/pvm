@@ -1,11 +1,13 @@
 Package: pvm
 Title: PharmacoVigilance Methods 
-Version: 0.1
-Date: 2018-01-30
+Version: 1.0
+Date: 2018-07-01
 Author: Louis Dijkstra [aut, cre], Marco Garling [ctb]
 Maintainer: Louis Dijkstra <dijkstra@leibniz-bips.de>
 Description: A collection of methods used in the field 
-	of pharmacovigilance
+	of pharmacovigilance for the dectection of 'interesting'
+	drug-adverse event pairs from spontaneous reporting 
+	data.
 Imports: 
 Depends: 
 	R (>= 3.2.3), 

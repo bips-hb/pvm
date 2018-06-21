@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertRawReports2Tables.R
 \name{convertRawReports2Tables}
 \alias{convertRawReports2Tables}
-\title{Convert Reports to 2x2 Tables}
+\title{Convert Reports to 2 x 2 Tables}
 \usage{
 convertRawReports2Tables(reports, n_drugs, n_events)
 }
@@ -26,11 +26,11 @@ A data frame where each row represents a 2 x 2 table. The columns represent:
 Creates a data frame containing all 2 x 2 contingency tables
 given a raw spontaneous reporting (SR) data set. An SR data set
 is a binary matrix, where each row is a report. The first
-columns represent the presence or absence of a drug, the
-The other columns represent the presence or absence of an event.
+columns represent the presence (\code{1}) or absence of a drug
+(\code{0}), the other columns represent the presence or absence 
+of an event.
 \cr\cr
-The tables are organized
-as follows:
+The tables are organized as follows:
 \tabular{lccc}{
    \tab event \eqn{j} \tab not event \eqn{j} \tab \emph{total}\cr
   drug \eqn{i} \tab \code{a} \tab \code{c} \tab \code{a} + \code{c}\cr

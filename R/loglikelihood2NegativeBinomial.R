@@ -1,9 +1,9 @@
 #' Log-Likelihood of the Bimodal Negative Binomial 
 #' 
 #' Returns the log-likelihood of the bimodal negative binomial model 
-#' used by the Gamma Poisson Shrinker (GPS), see function \code{\link{GPS}}.
-#' The function is written such that it can be used by the base function
-#' \code{\link{optim}}.
+#' used by the Gamma Poisson shrinker (GPS), see function 
+#' \code{\link{fitPriorParametersGPS}}. The function is written such 
+#' that it can be used by the base function \code{\link{nlminb}}.
 #' 
 #' @param p A vector with the parameters (\code{alpha1}, \code{beta1}, 
 #'          \code{alpha2}, \code{beta2} and \code{w}, in that order)
@@ -38,6 +38,7 @@
 #' loglikelihood2NegativeBinomial(p, a, E)
 #' #[1] 16.80512
 #' 
+#' @seealso \code{\link{GPS}}, \code{\link{fitPriorParametersGPS}}, \code{\link{dbinbinom}}
 #' @export
 loglikelihood2NegativeBinomial <- function(p, a, E) {
   

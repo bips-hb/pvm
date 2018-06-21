@@ -12,7 +12,7 @@
 #' @param c Count in the upper right corner of the table
 #' @param d Count in the lower right corner of the table
 #'
-#' @return A 2 x 2 table
+#' @return A 2 x 2 matrix
 #' @export
 createTable <- function(a, b, c, d) {
   matrix(c(a, b, c, d), nrow = 2)

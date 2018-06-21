@@ -16,7 +16,7 @@ createTable(a, b, c, d)
 \item{d}{Count in the lower right corner of the table}
 }
 \value{
-A 2 x 2 table
+A 2 x 2 matrix
 }
 \description{
 Returns a 2 x 2 contingency table of the form:

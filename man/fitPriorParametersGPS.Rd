@@ -8,13 +8,13 @@ fitPriorParametersGPS(a, b, c, d, alpha1 = 0.2, beta1 = 0.1, alpha2 = 2,
   beta2 = 4, w = 1/3)
 }
 \arguments{
-\item{a}{A list that contains the counts of the upper left corners of the tables}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{A list that contains the counts of the lower left corners of the tables}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{A list that contains the counts of the upper right corners of the tables}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{A list that contains the counts of the lower right corners of the tables}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 
 \item{alpha1}{Prior parameter \eqn{\alpha_1} (Default = 0.2)}
 
@@ -30,7 +30,7 @@ fitPriorParametersGPS(a, b, c, d, alpha1 = 0.2, beta1 = 0.1, alpha2 = 2,
 A list with the prior parameters
 }
 \description{
-Fits the prior parameters to the data for the Gamma Poisson Shrinker (GPS).
+Fits the prior parameters to the data for the Gamma Poisson shrinker (GPS).
 The initial guess for the parameter values are set the same as by DuMouchel (1999).
 }
 \examples{
@@ -55,6 +55,7 @@ fitPriorParametersGPS(a, b, c, d)
 #
 # $w
 # [1] 0.06132586
+
 }
 \references{
 DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
@@ -67,4 +68,7 @@ DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables,
             SIGKDD International Conference on Knowledge Discovery and 
             Data Mining - KDD ’01, (October), 67–76. 
             http://doi.org/10.1145/502512.502526
+}
+\seealso{
+\code{\link{loglikelihood2NegativeBinomial}}
 }

@@ -8,19 +8,17 @@ BCPNN(a, b, c, d, alpha = NULL, version = "original", mc_estimate = FALSE,
   mc_runs = 1000)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
-
-\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint that confidence interval is returned}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 
 \item{version}{Version of the BCPNN used. Can either be \code{'original'} (Default) 
 for the BCPNN as proposed orignally by Bate et al. (1998), or 
-\code{'alternative'} for the NN as proposed by 
+\code{'alternative'} for the BCPNN as proposed by 
 Norén et al. (2006).}
 
 \item{mc_estimate}{The value is estimated using Monte Carlo runs (Default = \code{FALSE}). 
@@ -35,7 +33,7 @@ The maximum aposteriori estimate of the information component (IC) or
 }
 \description{
 Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
- to a 2 x 2 tables of the form
+to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr

@@ -2,18 +2,18 @@
 % Please edit documentation in R/chi2Test.R
 \name{chi2Test}
 \alias{chi2Test}
-\title{\eqn{\chi 2} Test}
+\title{Chi-squared Test}
 \usage{
 chi2Test(a, b, c, d, yates = FALSE)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 
 \item{yates}{If \code{TRUE}, Yates's correction is used}
 }
@@ -21,16 +21,16 @@ chi2Test(a, b, c, d, yates = FALSE)
 p-value
 }
 \description{
-Performs the \eqn{\chi 2} test with or without Yates's continuity
-correction on the table
+Performs the chi-squared test with or without Yates's continuity
+correction to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr
   not drug \tab \code{b} \tab \code{d}
 }
 }
-\details{
-Warning about the Chi-squared approximation to be incorrect are
-suppressed (this case is quite common in the type of 2x2 tables
-one commonly observes in the field of pharmacovigilance).
+\note{
+The standard warnings for when the counts are too low 
+in the 2 x 2 tables are suppressed. Due to the sparse nature 
+of spontaneous reporting data, this happens quite frequently.
 }

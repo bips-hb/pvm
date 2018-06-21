@@ -7,13 +7,13 @@
 fisherExactTest(a, b, c, d, midpvalue = FALSE)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 
 \item{midpvalue}{The mid-p-value correction (suggested by Agresti) is applied}
 }
@@ -21,7 +21,8 @@ fisherExactTest(a, b, c, d, midpvalue = FALSE)
 p-value
 }
 \description{
-Performs the (one-sided) Fisher's exact test on the table:
+Performs the (one-sided) Fisher's exact test 
+to a collection of 2 x 2 tables of the form:
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr
@@ -31,4 +32,11 @@ Performs the (one-sided) Fisher's exact test on the table:
 \details{
 Wrapper function for the \code{Rcpp} functions \code{fishersTestGreater}
 and \code{midPFishersTestGreater}.
+}
+\references{
+Ahmed, I., Dalmasso, C., Haramburu, F., Thiessard, F., 
+            Bro\"et, P., & Tubert-Bitter, P. (2010). False Discovery 
+            Rate Estimation for Frequentist Pharmacovigilance Signal 
+            Detection Methods. Biometrics, 66(1), 301–309. 
+            https://doi.org/10.1111/j.1541-0420.2009.01262.x
 }

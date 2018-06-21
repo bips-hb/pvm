@@ -1,13 +1,14 @@
 #' Test of the Poisson Mean
 #'
-#' Performs the test of the Poisson mean for the table
+#' Performs the test of the Poisson mean 
+#' to a collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
 #'   drug \tab \code{a} \tab \code{c}\cr
 #'   not drug \tab \code{b} \tab \code{d}
 #' }
 #'
-#' @inheritParams createTable
+#' @inheritParams BCPNN
 #'
 #' @return p-value
 #' @export

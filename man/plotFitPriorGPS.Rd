@@ -8,23 +8,26 @@ plotFitPriorGPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d),
   bins = 50, precision = 100, xmin = 0, xmax = 10)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
+\item{d}{A vector with the counts of the lower right corner of the tables}
+
+\item{prior}{List that contains the prior parameters. If not specified, automatically fitted to the data, 
+see \code{\link{fitPriorParametersGPS}}}
+
+\item{bins}{Number of bins used}
 
 \item{precision}{The number of sample points used for plotting (Default = 100)}
 
-\item{alpha1, beta1}{The rate and shape parameter for the first mode}
+\item{xmin}{Minimal x-value (Default = 0)}
 
-\item{alpha2, beta2}{The rate and shape parameter for the second mode}
-
-\item{w}{The weight of the first mode (must lie in \eqn{[0,1]})}
+\item{xmax}{Maximal x-value (Default = 10)}
 }
 \description{
-Plots the fit of the prior distribution of the GPS to 
+Plots the fit of the prior distribution of the GPS to
 the observed number of reports
 }

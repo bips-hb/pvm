@@ -1,6 +1,7 @@
 #' Proportional Reporting Rate (PRR)
 #'
-#' Determines the proportional reporting rate for a table of the form:
+#' Determines the proportional reporting rate to a 
+#' collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
 #'   drug \tab \code{a} \tab \code{c}\cr
@@ -9,7 +10,7 @@
 #' In case the parameter \code{alpha} is set, it returns
 #' the lower endpoint of the \eqn{100(1 - \alpha)} percent confidence interval.
 #'
-#' @inheritParams ROR
+#' @inheritParams BCPNN
 #'
 #' @return The PRR or the lower endpoint of the confidence interval
 #' @export

@@ -7,24 +7,25 @@
 GPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 
-\item{prior}{List that contains the prior parameters (see function \code{\link{fitPriorParametersGPS}})}
+\item{prior}{List that contains the prior parameters. If not specified, automatically fitted to the data, 
+see \code{\link{fitPriorParametersGPS}}.}
 
 \item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint of that confidence interval is returned}
 }
 \value{
-a tibble
+a vector with the GPS estimates
 }
 \description{
 Applies the Gamma Poisson Shrinker (GPS) introduced by
-DuMouchel (1999) to a 2 x 2 table of the form
+DuMouchel (1999) to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr
@@ -42,4 +43,7 @@ DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables,
             SIGKDD International Conference on Knowledge Discovery and 
             Data Mining - KDD ’01, (October), 67–76. 
             http://doi.org/10.1145/502512.502526
+}
+\seealso{
+\code{\link{fitPriorParametersGPS}}
 }

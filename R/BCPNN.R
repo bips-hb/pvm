@@ -1,7 +1,7 @@
 #' Bayesian Confidence Propagation Neural Network (BCPNN)
 #'
 #' Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
-#'  to a 2 x 2 tables of the form
+#' to a collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
 #'   drug \tab \code{a} \tab \code{c}\cr
@@ -16,10 +16,13 @@
 #' The implementation of this function is based on the implementation in the
 #' \code{PhViD} package. 
 #' 
-#' @inheritParams ROR
+#' @param a A vector with the counts of the upper left corner of the tables
+#' @param b A vector with the counts of the lower left corner of the tables
+#' @param c A vector with the counts of the upper right corner of the tables
+#' @param d A vector with the counts of the lower right corner of the tables
 #' @param version Version of the BCPNN used. Can either be \code{'original'} (Default) 
 #'                for the BCPNN as proposed orignally by Bate et al. (1998), or 
-#'                \code{'alternative'} for the NN as proposed by 
+#'                \code{'alternative'} for the BCPNN as proposed by 
 #'                Norén et al. (2006).
 #' @param mc_estimate The value is estimated using Monte Carlo runs (Default = \code{FALSE}). 
 #'                    Only used when \code{version = 'alternative'}.
@@ -96,7 +99,7 @@ BCPNN <- function(a, b, c, d, alpha = NULL,
   if (!mc_estimate) {
     if (!is.null(alpha)) {
       if (!dplyr::near(alpha, .025)) {
-        stop("ERROR BCPNN (alternative): the lower end point of the CI can only be approximated when alpha = .025. Otherwise, use MC (set mc_estimate = TRUE)")
+        stop("the lower end point of the CI can only be approximated when alpha = .025. Otherwise, use MC (set mc_estimate = TRUE)")
       }
     }
   }

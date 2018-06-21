@@ -1,12 +1,9 @@
 #' Prior Parameter Fit for the GPS
 #'
-#' Fits the prior parameters to the data for the Gamma Poisson Shrinker (GPS).
+#' Fits the prior parameters to the data for the Gamma Poisson shrinker (GPS).
 #' The initial guess for the parameter values are set the same as by DuMouchel (1999).
 #'
-#' @param a A list that contains the counts of the upper left corners of the tables
-#' @param b A list that contains the counts of the lower left corners of the tables
-#' @param c A list that contains the counts of the upper right corners of the tables
-#' @param d A list that contains the counts of the lower right corners of the tables
+#' @inheritParams BCPNN
 #' @param alpha1 Prior parameter \eqn{\alpha_1} (Default = 0.2)
 #' @param beta1 Prior parameter \eqn{\beta_1} (Default = 0.1)
 #' @param alpha2 Prior parameter \eqn{\alpha_2} (Default = 2.0)
@@ -47,6 +44,8 @@
 #' #
 #' # $w
 #' # [1] 0.06132586
+#' 
+#' @seealso \code{\link{loglikelihood2NegativeBinomial}}
 #' @export
 fitPriorParametersGPS <- function(a, b, c, d,
                                   alpha1 = 0.2, beta1 = 0.1,

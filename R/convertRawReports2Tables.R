@@ -1,13 +1,13 @@
-#' Convert Reports to 2x2 Tables
+#' Convert Reports to 2 x 2 Tables
 #'
 #' Creates a data frame containing all 2 x 2 contingency tables
 #' given a raw spontaneous reporting (SR) data set. An SR data set
 #' is a binary matrix, where each row is a report. The first
-#' columns represent the presence or absence of a drug, the
-#' The other columns represent the presence or absence of an event.
+#' columns represent the presence (\code{1}) or absence of a drug
+#' (\code{0}), the other columns represent the presence or absence 
+#' of an event.
 #' \cr\cr
-#' The tables are organized
-#' as follows:
+#' The tables are organized as follows:
 #' \tabular{lccc}{
 #'    \tab event \eqn{j} \tab not event \eqn{j} \tab \emph{total}\cr
 #'   drug \eqn{i} \tab \code{a} \tab \code{c} \tab \code{a} + \code{c}\cr
