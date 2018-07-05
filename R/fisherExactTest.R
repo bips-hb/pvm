@@ -11,7 +11,7 @@
 #' Wrapper function for the \code{Rcpp} functions \code{fishersTestGreater}
 #' and \code{midPFishersTestGreater}.
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
 #' @param midpvalue The mid-p-value correction (suggested by Agresti) is applied
 #'
 #' @return p-value

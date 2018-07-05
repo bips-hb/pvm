@@ -10,7 +10,8 @@
 #' In case the parameter \code{alpha} is set, it returns
 #' the lower endpoint of the \eqn{100(1 - \alpha)} percent confidence interval.
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
+#' @template alphaParam
 #'
 #' @return The PRR or the lower endpoint of the confidence interval
 #' @export

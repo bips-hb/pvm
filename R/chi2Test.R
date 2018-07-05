@@ -12,7 +12,7 @@
 #' in the 2 x 2 tables are suppressed. Due to the sparse nature 
 #' of spontaneous reporting data, this happens quite frequently.
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
 #' @param yates If \code{TRUE}, Yates's correction is used
 #'
 #' @return p-value

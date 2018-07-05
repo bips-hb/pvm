@@ -8,11 +8,11 @@
 #'   not drug \tab \code{b} \tab \code{d}
 #' }
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
 #' @param prior List that contains the prior parameters. If not specified, automatically fitted to the data, 
 #'              see \code{\link{fitPriorParametersGPS}}. 
-#' @param alpha Value between \eqn{(0,1)}. If set, the lower endpoint of that confidence interval is returned
-#'
+#' @template alphaParam
+#' 
 #' @return a vector with the GPS estimates
 #' 
 #' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 

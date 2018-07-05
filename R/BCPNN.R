@@ -1,7 +1,6 @@
 #' Bayesian Confidence Propagation Neural Network (BCPNN)
 #'
-#' Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
-#' to a collection of 2 x 2 tables of the form
+#' Applies the BCPNN to a collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
 #'   drug \tab \code{a} \tab \code{c}\cr
@@ -16,10 +15,8 @@
 #' The implementation of this function is based on the implementation in the
 #' \code{PhViD} package. 
 #' 
-#' @param a A vector with the counts of the upper left corner of the tables
-#' @param b A vector with the counts of the lower left corner of the tables
-#' @param c A vector with the counts of the upper right corner of the tables
-#' @param d A vector with the counts of the lower right corner of the tables
+#' @template standardParams
+#' @template alphaParam
 #' @param version Version of the BCPNN used. Can either be \code{'original'} (Default) 
 #'                for the BCPNN as proposed orignally by Bate et al. (1998), or 
 #'                \code{'alternative'} for the BCPNN as proposed by 

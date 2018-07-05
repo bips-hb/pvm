@@ -8,12 +8,12 @@
 #'   not drug \tab \code{b} \tab \code{d}
 #' }
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
 #'
 #' @return p-value
 #' @export
 PoissonTest <- function(a, b, c, d) {
-  # to overcome possible integer overflow later
+  # to overcome possible integer overflow 
   a <- as.numeric(a)
   b <- as.numeric(b)
   c <- as.numeric(c)

@@ -4,24 +4,22 @@
 \alias{RRR}
 \title{Relative Reporting Risk (RRR)}
 \usage{
-RRR(a, b, c, d, E = ((a + b) * (a + c))/(a + b + c + d))
+RRR(a, b, c, d)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
-
-\item{E}{The expected count when the drug and event are (approximately) independent}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 }
 \value{
-The RRR of the table
+The RRR
 }
 \description{
-Determines the proportional reporting rate for a table of the form:
+Determines the RRR for a collection of 2 x 2 tables of the form
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr

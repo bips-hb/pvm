@@ -27,6 +27,9 @@ see \code{\link{fitPriorParametersGPS}}}
 
 \item{xmax}{Maximal x-value (Default = 10)}
 }
+\value{
+the plot
+}
 \description{
 Plots the fit of the prior distribution of the GPS to
 the observed number of reports

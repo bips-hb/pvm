@@ -18,7 +18,8 @@ GPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
 \item{prior}{List that contains the prior parameters. If not specified, automatically fitted to the data, 
 see \code{\link{fitPriorParametersGPS}}.}
 
-\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint of that confidence interval is returned}
+\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the 
+confidence (or credible) interval is returned. (Default = \code{NULL})}
 }
 \value{
 a vector with the GPS estimates

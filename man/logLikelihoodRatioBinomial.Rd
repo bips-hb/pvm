@@ -7,18 +7,29 @@
 logLikelihoodRatioBinomial(a, b, c, d)
 }
 \arguments{
-\item{a}{Count in the upper left corner of the table}
+\item{a}{A vector with the counts of the upper left corner of the tables}
 
-\item{b}{Count in the lower left corner of the table}
+\item{b}{A vector with the counts of the lower left corner of the tables}
 
-\item{c}{Count in the upper right corner of the table}
+\item{c}{A vector with the counts of the upper right corner of the tables}
 
-\item{d}{Count in the lower right corner of the table}
+\item{d}{A vector with the counts of the lower right corner of the tables}
 }
 \value{
-log-likelihood ratio
+The log-likelihood ratio
 }
 \description{
-Performs the log-likelihood ratio test assuming a binomial distribution.
-The test was first suggested by Duan et al. (2013).
+Performs the log-likelihood ratio test for 
+a collection of 2 x 2 tables of the form
+\tabular{lcc}{
+   \tab event \tab not event\cr
+  drug \tab \code{a} \tab \code{c}\cr
+  not drug \tab \code{b} \tab \code{d}
+}
+}
+\references{
+Lian Duan, Khoshneshin, M., Street, W. N., 
+            & Mei Liu. (2013). Adverse drug effect detection. 
+            IEEE Journal of Biomedical and Health Informatics, 
+            17(2), 305–11. https://doi.org/10.1109/TITB.2012.2227272
 }

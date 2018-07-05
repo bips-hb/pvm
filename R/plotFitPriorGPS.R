@@ -3,13 +3,15 @@
 #' Plots the fit of the prior distribution of the GPS to
 #' the observed number of reports
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
 #' @param prior List that contains the prior parameters. If not specified, automatically fitted to the data, 
 #'              see \code{\link{fitPriorParametersGPS}}
 #' @param bins Number of bins used 
 #' @param precision The number of sample points used for plotting (Default = 100)
 #' @param xmin Minimal x-value (Default = 0)
 #' @param xmax Maximal x-value (Default = 10)
+#'
+#' @return the plot
 #'
 #' @export
 plotFitPriorGPS <- function(a, b, c, d,
@@ -57,5 +59,4 @@ plotFitPriorGPS <- function(a, b, c, d,
       ggplot2::labs(x = "relative risk (RR)", y = "density", title = "GPS Prior") +
       ggplot2::geom_histogram(aes(x = RR, ..density..), bins = bins) +
       xlim(xmin, xmax)
-    return(p)
   }

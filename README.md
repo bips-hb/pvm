@@ -1,4 +1,4 @@
-## PharmacoVigilance Methods  (PVM)
+## PharmacoVigilance Methods (PVM)
 
 `PVM` is a R package containing a wide variety of methods used in the field of pharmacovigilance for discovering 'interesting' drug-adverse event pairs from spontaneous reporting data. 
 

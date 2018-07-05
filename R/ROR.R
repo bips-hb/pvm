@@ -1,6 +1,6 @@
 #' Reporting Odds Ratio (ROR)
 #'
-#' Determines the reporting odds ratio for a table of the form:
+#' Determines the ROR for a collection of 2 x 2 tables of the form:
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
 #'   drug \tab \code{a} \tab \code{c}\cr
@@ -9,9 +9,9 @@
 #' In case the parameter \code{alpha} is set, it returns
 #' the lower endpoint of the \eqn{100(1 - \alpha)} percent confidence interval.
 #'
-#' @inheritParams createTable
-#' @param alpha Value between \eqn{(0,1)}. If set, the lower endpoint that confidence interval is returned
-#'
+#' @template standardParams
+#' @template alphaParam
+#' 
 #' @return The ROR or the lower endpoint of the confidence interval of the ROR
 #' @export
 ROR <- function(a, b, c, d, alpha = NULL) {

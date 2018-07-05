@@ -16,6 +16,9 @@ BCPNN(a, b, c, d, alpha = NULL, version = "original", mc_estimate = FALSE,
 
 \item{d}{A vector with the counts of the lower right corner of the tables}
 
+\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the 
+confidence (or credible) interval is returned. (Default = \code{NULL})}
+
 \item{version}{Version of the BCPNN used. Can either be \code{'original'} (Default) 
 for the BCPNN as proposed orignally by Bate et al. (1998), or 
 \code{'alternative'} for the BCPNN as proposed by 
@@ -32,8 +35,7 @@ The maximum aposteriori estimate of the information component (IC) or
         the lower endpoint of the approximate credible interval
 }
 \description{
-Applies the Bayesian Confidence Propagation Neural Network (BCPNN)
-to a collection of 2 x 2 tables of the form
+Applies the BCPNN to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
    \tab event \tab not event\cr
   drug \tab \code{a} \tab \code{c}\cr

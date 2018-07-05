@@ -3,7 +3,7 @@
 #' Fits the prior parameters to the data for the Gamma Poisson shrinker (GPS).
 #' The initial guess for the parameter values are set the same as by DuMouchel (1999).
 #'
-#' @inheritParams BCPNN
+#' @template standardParams
 #' @param alpha1 Prior parameter \eqn{\alpha_1} (Default = 0.2)
 #' @param beta1 Prior parameter \eqn{\beta_1} (Default = 0.1)
 #' @param alpha2 Prior parameter \eqn{\alpha_2} (Default = 2.0)
