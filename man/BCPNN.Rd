@@ -60,22 +60,22 @@ d <- srdata$tables$d
 
 # Applying the original BCPNN: 
 BCPNN(a, b, c, d)
-# [1]  0.043876264 -0.486132538 -0.884438724 -0.306053947 ...
+# [1]  0.349783103 -0.609077730 -0.168446711 -0.277981964 ...
 
 # Getting the lower end point of the 95\% confidence intervaL: 
 BCPNN(a, b, c, d, alpha = 0.05) 
-# [1]  0.001484129 -4.790332308 -1.114858204 -0.579565135 ...
+# [1]  0.280077253 -0.994960076 -0.293624528 -0.408661852 ...
 
 # Using the alternative version: 
 BCPNN(a, b, c, d, version = 'alternative')
-# [1]  4.382378e-02  1.021490e-05 -8.805061e-01 -2.981655e-01 ...
+# [1]  0.350235800 -0.595807902 -0.166901050 -0.276387348 ...
 
 # Getting the lower end points of the 95\% confidence interval 
 # using the alternative version. The estimates are based on 
 # 10,000 Monte Carlo samples:
 BCPNN(a, b, c, d, version = 'alternative', 
       alpha = 0.05, mc_estimate = TRUE, mc_runs = 10^4)
-# [1]  0.03635975 -6.86648303 -1.07120957 -0.49773367 ...
+# [1]  [1]  0.31621489 -0.92490130 -0.25601307 -0.37040303 ...
 }
 \references{
 Bate, A., Lindquist, M., Edwards, I. R., Olsson, S., Orre, R., 

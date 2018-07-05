@@ -3,7 +3,7 @@
 \docType{data}
 \name{srdata}
 \alias{srdata}
-\title{A Simulated SR Data Set}
+\title{A Simulated Spontaneous Reporting System}
 \format{\code{srdata} contains the following elements:
 \describe{
   \item{sr}{A binary data frame with 10,000 rows and 20 columns. The first
@@ -12,9 +12,20 @@
            zero otherwise. The column names are
            \code{drug1} till \code{drug10} and \code{event1} till \code{event10}.
   }
-  \item{prob_drugs}{A vector with the marginal probabilities of \code{drug1} to \code{drug10}}
-  \item{prob_events}{A vector with the marginal probabilities of \code{event1} to \code{event10}}
-  \item{corrmat}{The 20 x 20 correlation matrix}
+  \item{dag}{The directed acycled graph as an \code{igraph} object}
+        \item{nodes}{A tibble with all the information on each node/variate:
+            \itemize{
+               \item{\code{label}}{ The label for each node/variate}
+               \item{\code{in_degree}}{ The number of edges pointing to the node}
+               \item{\code{id}}{ The ID of each node (simple integer)}
+               \item{\code{parent_id}}{ The ID of the parent node - if any. Otherwise equal to \code{-1}}
+               \item{\code{margprob}}{ The marginal probability of the node/variate}
+               \item{\code{beta0}}{ The intercept in the logistic regression model for that node}
+               \item{\code{beta1}}{ The regression coefficient in the logistic regression model for the parent}
+            }
+        }
+  \item{prob_drugs}{A vector with marginal probabilities of the drugs}
+  \item{prob_events}{A vector with marginal probabilities of the events}
   \item{tables}{A data frame with 100 rows. Each row contains the data on a drug-event pair.
     The columns represent:
     \describe{
@@ -22,13 +33,7 @@
       \item{\code{event_id}}{The ID of the event}
       \item{\code{prob_drug}}{The marginal probability of that drug}
       \item{\code{prob_event}}{The marginal probability of that event}
-      \item{\code{n_corr_drugs}}{The number of drugs that correlate with this drug}
-      \item{\code{n_corr_events}}{The number of events that correlate with the given event}
-      \item{\code{max_corr_drug}}{The maximum correlation between this drug and other drugs}
-      \item{\code{max_corr_event}}{The maximum correlation between this event and other events}
-      \item{\code{corr}}{The correlation between the drug-event pair}
-      \item{\code{cov}}{The covariance between the drug-event pair}
-      \item{\code{commonprob}}{The common probability for the drug-event pair}
+      \item{\code{or}}{The odds ratio}
       \item{\code{associated}}{\code{TRUE} is there is a non-zero correlation, \code{FALSE} otherwise}
       \item{\code{a}}{Number of times the drug and event appeared together in a report}
       \item{\code{b}}{Number of times the event appeared without the drug in a report}
@@ -43,28 +48,35 @@ srdata
 \description{
 A simulated spontaneous reporting data set generated with the
 \code{SRSim} simulator. The data set contains 10,000 reports
-for 10 drugs and 10 events. Ten drug-event pairs have a correlation
-strength of 0.5. The others are zero. There is no correlation
-between the drugs and the events themselves. The marginal probabilities
-over the drugs and the events were drawn from a Beta distribution with
-parameters \eqn{\alpha = 1.0} and \eqn{\beta = 5.0}.
+for 10 drugs and 10 adverse events (AEs). Five drug-AE pairs 
+are associated with an odds ratio of 2. All other drug-AE pairs
+have an odds ratio of 1. Five drugs are innocent bystanders, i.e.,
+they are prescribed together with one other drug, but they do not 
+cause any adverse events. 
 \cr\cr
-The following commands were used for
-generating the data set:
+The marginal probabilities over the drugs and the AEs were drawn 
+from a Beta distribution with parameters \eqn{\alpha = 1.0} and 
+\eqn{\beta = 20.0}.
+\cr\cr
+The conditional probability of an innocent bystander given that
+the other drug is prescribed is set to .9 (this is regulated with 
+the argument \code{bystander_prob}). 
+\cr\cr
+The following commands were used for generating the data set:
 \cr\cr
 \code{
-  library(SRSim) \cr
-  srdata <- SRSim::simulateSRData(n_reports = 10000,
-                                  n_drugs = 10,
-                                  n_events = 10,
-                                  rho_drugs = 0.0,
-                                  rho_events = 0.0,
-                                  rho = 0.5,
-                                  n_correlated_pairs = 10,
-                                  seed = 1) \cr
+library(SRSim) \cr
+srdata <- SRSim::simulateSRS(n_reports = 10000,
+                            n_drugs = 10,
+                            n_events = 10,
+                            n_innocent_bystanders = 5,
+                            bystander_prob = 0.9,
+                            n_correlated_pairs = 5,
+                            theta = 2,
+                            seed = 1) \cr
  # create the 2x2 tables
  \cr
- srdata$tables <- SRSim::create2x2Tables(srdata)
+ srdata$tables <- SRSim::convert2Tables(srdata)
 }
 }
 \keyword{datasets}
