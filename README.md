@@ -1,6 +1,6 @@
 ## PharmacoVigilance Methods (PVM)
 
-`PVM` is a R package containing a wide variety of methods used in the field of pharmacovigilance for discovering 'interesting' drug-adverse event pairs from spontaneous reporting data. 
+`PVM` is an `R` package containing a wide variety of methods used in the field of pharmacovigilance for discovering 'interesting' drug-adverse event pairs from spontaneous reporting data. 
 
 ### Available Methods
 
@@ -35,8 +35,16 @@ To install, simply type in R
 devtools::install_github("bips-hb/pvm")
 ```
 
+### References
+
+Please cite 
+
+__Adverse Event Discovery for Spontaneous Reporting Systems: A Systematic Comparison__\
+*L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot*\
+To be submitted (2018)
+
 ### Contact
 
-*Author*: Louis Dijkstra 
-
-*E-mail*: dijkstra (at) leibniz-bips.de
+Louis Dijkstra\
+Leibniz Institute for Prevention Research & Epidemiology  
+E-mail: dijkstra (at) leibniz-bips.de
