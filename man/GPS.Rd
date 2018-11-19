@@ -4,7 +4,8 @@
 \alias{GPS}
 \title{Gamma Poisson Shrinker (GPS)}
 \usage{
-GPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
+GPS(a, b, c, d, E = ((a + b) * (a + c))/(a + b + c + d),
+  prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
 }
 \arguments{
 \item{a}{A vector with the counts of the upper left corner of the tables}
@@ -14,6 +15,9 @@ GPS(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
 \item{c}{A vector with the counts of the upper right corner of the tables}
 
 \item{d}{A vector with the counts of the lower right corner of the tables}
+
+\item{E}{Vector with the expected values when there are no associations. By default set to 
+the values used by DuMouchel (1999), i.e., \code{((a + b)*(a + c)) / (a + b + c + d)}.}
 
 \item{prior}{List that contains the prior parameters. If not specified, automatically fitted to the data, 
 see \code{\link{fitPriorParametersGPS}}.}

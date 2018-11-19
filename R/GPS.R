@@ -9,6 +9,8 @@
 #' }
 #'
 #' @template standardParams
+#' @param E Vector with the expected values when there are no associations. By default set to 
+#'          the values used by DuMouchel (1999), i.e., \code{((a + b)*(a + c)) / (a + b + c + d)}.
 #' @param prior List that contains the prior parameters. If not specified, automatically fitted to the data, 
 #'              see \code{\link{fitPriorParametersGPS}}. 
 #' @template alphaParam
@@ -28,7 +30,8 @@
 #'             
 #' @seealso \code{\link{fitPriorParametersGPS}}
 #' @export
-GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL) {
+GPS <- function(a, b, c, d, E = ((a + b)*(a + c)) / (a + b + c + d),
+                prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL) {
   
   alpha1 <- prior$alpha1
   beta1  <- prior$beta1
@@ -41,8 +44,6 @@ GPS <- function(a, b, c, d, prior = fitPriorParametersGPS(a, b, c, d), alpha = N
   b <- as.numeric(b)
   c <- as.numeric(c)
   d <- as.numeric(d) 
-
-  E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
 
   Q <- w * dnbinom(a, size = alpha1, prob = beta1 / (beta1 + E)) /
     dbinbinom(a, size1 = alpha1, prob1 = beta1 / (beta1 + E), 
