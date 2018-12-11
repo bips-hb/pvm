@@ -47,7 +47,8 @@
 #' 
 #' @seealso \code{\link{loglikelihood2NegativeBinomial}}
 #' @export
-fitPriorParametersGPS <- function(a, b, c, d,
+fitPriorParametersGPS <- function(a, b, c, d, 
+                                  E = ((a + b)*(a + c)) / (a + b + c + d),
                                   alpha1 = 0.2, beta1 = 0.1,
                                   alpha2 = 2.0, beta2 = 4,
                                   w = 1/3) {
@@ -57,8 +58,6 @@ fitPriorParametersGPS <- function(a, b, c, d,
   b <- as.numeric(b)
   c <- as.numeric(c)
   d <- as.numeric(d) 
-  
-  E = ((a + b)*(a + c)) / (a + b + c + d) # expected count
 
   # maximizing the log likelihood 
   res <- suppressWarnings(
