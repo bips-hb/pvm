@@ -18,10 +18,10 @@
 PRR <- function(a, b, c, d, alpha = NULL) {
 
   # determine the marginals for the drug
-  q   <- a + b
-  r   <- c + d
+  q   <- a + c
+  r   <- b + d
 
-  prr <- (a / q) * (b / r)
+  prr <- (a / q) / (b / r)
   if (is.null(alpha)) {
     return(prr)
   } else{
