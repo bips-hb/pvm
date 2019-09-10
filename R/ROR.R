@@ -20,6 +20,6 @@ ROR <- function(a, b, c, d, alpha = NULL) {
     return(ror)
   } else{
     phi <- qnorm(1.0 - alpha / 2)
-    return(exp(log(ror) - phi * sqrt((1 / a) + (1 / b) + (1 + c) + (1 / d))))
+    return(exp(log(ror) - phi * sqrt((1 / a) + (1 / b) + (1 / c) + (1 / d))))
   }
 }
