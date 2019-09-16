@@ -21,6 +21,6 @@ YulesQ <- function(a, b, c, d, alpha = NULL) {
     return(Q)
   } else{
     phi <- qnorm(1.0 - alpha / 2)
-    return(Q - phi * ((1 - Q^2)/2 * sqrt((1 / a) + (1 / b) + (1 + c) + (1 / d))))
+    return(Q - phi * ((1 - Q^2)/2 * sqrt((1 / a) + (1 / b) + (1 / c) + (1 / d))))
   }
 }
