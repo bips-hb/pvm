@@ -35,6 +35,10 @@ To install, simply type in R
 devtools::install_github("bips-hb/pvm")
 ```
 
+### Acknowledgements
+
+We gratefully acknowledge the financial support from the innovation fund (“Innovationsfonds”) of the Federal Joint Committee in Germany (grant number: 01VSF16020).
+
 ### References
 
 Please cite 
