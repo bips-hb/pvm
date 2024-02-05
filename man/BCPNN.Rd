@@ -4,8 +4,16 @@
 \alias{BCPNN}
 \title{Bayesian Confidence Propagation Neural Network (BCPNN)}
 \usage{
-BCPNN(a, b, c, d, alpha = NULL, version = "original", mc_estimate = FALSE,
-  mc_runs = 1000)
+BCPNN(
+  a,
+  b,
+  c,
+  d,
+  alpha = NULL,
+  version = "original",
+  mc_estimate = FALSE,
+  mc_runs = 1000
+)
 }
 \arguments{
 \item{a}{A vector with the counts of the upper left corner of the tables}

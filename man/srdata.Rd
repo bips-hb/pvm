@@ -4,7 +4,8 @@
 \name{srdata}
 \alias{srdata}
 \title{A Simulated Spontaneous Reporting System}
-\format{\code{srdata} contains the following elements:
+\format{
+\code{srdata} contains the following elements:
 \describe{
   \item{sr}{A binary data frame with 10,000 rows and 20 columns. The first
            10 columns represent the drugs; the latter represent the events.
@@ -41,7 +42,8 @@
       \item{\code{d}}{Number of times the drug and event both did not appear in a report}
    }
  }
-}}
+}
+}
 \usage{
 srdata
 }
@@ -65,7 +67,7 @@ the argument \code{bystander_prob}).
 The following commands were used for generating the data set:
 \cr\cr
 \code{
-library(SRSim) \cr
+library(SRSim)
 srdata <- SRSim::simulateSRS(n_reports = 10000,
                             n_drugs = 10,
                             n_events = 10,
@@ -73,9 +75,9 @@ srdata <- SRSim::simulateSRS(n_reports = 10000,
                             bystander_prob = 0.9,
                             n_correlated_pairs = 5,
                             theta = 2,
-                            seed = 1) \cr
+                            seed = 1)
  # create the 2x2 tables
- \cr
+ 
  srdata$tables <- SRSim::convert2Tables(srdata)
 }
 }

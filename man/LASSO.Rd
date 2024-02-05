@@ -4,9 +4,18 @@
 \alias{LASSO}
 \title{LASSO}
 \usage{
-LASSO(reports, n_drugs, n_events, lambda = NULL, nfolds = 10,
-  type.measure = "deviance", lambda.type = "min", alpha = 1,
-  event_ids = 1:n_events, verbose = FALSE)
+LASSO(
+  reports,
+  n_drugs,
+  n_events,
+  lambda = NULL,
+  nfolds = 10,
+  type.measure = "deviance",
+  lambda.type = "min",
+  alpha = 1,
+  event_ids = 1:n_events,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{reports}{A binary matrix, where each row represents a report}

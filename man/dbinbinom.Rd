@@ -9,9 +9,9 @@ dbinbinom(x, size1, prob1, size2, prob2, w)
 \arguments{
 \item{x}{The x-values}
 
-\item{size1, shape1}{The size and shape parameters for the first mode}
+\item{size1, shape1, prob1}{The size, shape and prob parameters for the first mode}
 
-\item{size2, shape2}{The size and shape parameters for the second mode}
+\item{size2, shape2, prob2}{The size, shape and prob parameters for the second mode}
 
 \item{w}{The weight of the first mode (must lie in \eqn{[0,1]})}
 }

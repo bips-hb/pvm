@@ -4,8 +4,15 @@
 \alias{GPS}
 \title{Gamma Poisson Shrinker (GPS)}
 \usage{
-GPS(a, b, c, d, E = ((a + b) * (a + c))/(a + b + c + d),
-  prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL)
+GPS(
+  a,
+  b,
+  c,
+  d,
+  E = ((a + b) * (a + c))/(a + b + c + d),
+  prior = fitPriorParametersGPS(a, b, c, d),
+  alpha = NULL
+)
 }
 \arguments{
 \item{a}{A vector with the counts of the upper left corner of the tables}

@@ -4,8 +4,18 @@
 \alias{fitPriorParametersGPS}
 \title{Prior Parameter Fit for the GPS}
 \usage{
-fitPriorParametersGPS(a, b, c, d, E = ((a + b) * (a + c))/(a + b + c + d),
-  alpha1 = 0.2, beta1 = 0.1, alpha2 = 2, beta2 = 4, w = 1/3)
+fitPriorParametersGPS(
+  a,
+  b,
+  c,
+  d,
+  E = ((a + b) * (a + c))/(a + b + c + d),
+  alpha1 = 0.2,
+  beta1 = 0.1,
+  alpha2 = 2,
+  beta2 = 4,
+  w = 1/3
+)
 }
 \arguments{
 \item{a}{A vector with the counts of the upper left corner of the tables}

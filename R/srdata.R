@@ -19,7 +19,7 @@
 #' The following commands were used for generating the data set:
 #' \cr\cr
 #' \code{
-#' library(SRSim) \cr
+#' library(SRSim)
 #' srdata <- SRSim::simulateSRS(n_reports = 10000,
 #'                             n_drugs = 10,
 #'                             n_events = 10,
@@ -27,9 +27,9 @@
 #'                             bystander_prob = 0.9,
 #'                             n_correlated_pairs = 5,
 #'                             theta = 2,
-#'                             seed = 1) \cr
+#'                             seed = 1)
 #'  # create the 2x2 tables
-#'  \cr
+#'  
 #'  srdata$tables <- SRSim::convert2Tables(srdata)
 #' }
 #'

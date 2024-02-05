@@ -88,7 +88,7 @@ BCPNN <- function(a, b, c, d, alpha = NULL,
     if (is.null(alpha)) {
       return(IC)
     } else {
-      return(qnorm(alpha, IC, sqrt(VICb)))
+      return(stats::qnorm(alpha, IC, sqrt(VICb)))
     }
   }
   
