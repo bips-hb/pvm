@@ -19,11 +19,11 @@ PoissonTest(a, b, c, d)
 p-value
 }
 \description{
-Performs the test of the Poisson mean 
+Performs the test of the Poisson mean
 to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
-   \tab event \tab not event\cr
-  drug \tab \code{a} \tab \code{c}\cr
-  not drug \tab \code{b} \tab \code{d}
+\tab event \tab not event\cr
+drug \tab \code{a} \tab \code{c}\cr
+not drug \tab \code{b} \tab \code{d}
 }
 }

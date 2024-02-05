@@ -10,7 +10,7 @@
 #'
 #' @return The density for the values in x
 #' 
-#' @seealso \code{\link{logLikelihood2NegativeBinomial}}, \code{\link{fitPriorParametersGPS}}, \code{\link{GPS}}
+#' @seealso [logLikelihood2NegativeBinomial()], [fitPriorParametersGPS()], [GPS()]
 #' 
 #' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
 #'             with an Application to the FDA Spontaneous Reporting System. 

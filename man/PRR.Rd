@@ -15,19 +15,19 @@ PRR(a, b, c, d, alpha = NULL)
 
 \item{d}{A vector with the counts of the lower right corner of the tables}
 
-\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the 
+\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the
 confidence (or credible) interval is returned. (Default = \code{NULL})}
 }
 \value{
 The PRR or the lower endpoint of the confidence interval
 }
 \description{
-Determines the proportional reporting rate to a 
+Determines the proportional reporting rate to a
 collection of 2 x 2 tables of the form
 \tabular{lcc}{
-   \tab event \tab not event\cr
-  drug \tab \code{a} \tab \code{c}\cr
-  not drug \tab \code{b} \tab \code{d}
+\tab event \tab not event\cr
+drug \tab \code{a} \tab \code{c}\cr
+not drug \tab \code{b} \tab \code{d}
 }
 In case the parameter \code{alpha} is set, it returns
 the lower endpoint of the \eqn{100(1 - \alpha)} percent confidence interval.

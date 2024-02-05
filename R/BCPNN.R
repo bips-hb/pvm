@@ -3,28 +3,28 @@
 #' Applies the BCPNN to a collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
-#'   drug \tab \code{a} \tab \code{c}\cr
-#'   not drug \tab \code{b} \tab \code{d}
+#'   drug \tab `a` \tab `c`\cr
+#'   not drug \tab `b` \tab `d`
 #' }
 #' There are two versions of the BCPNN: 
 #' \itemize{
-#'   \item{\code{'original'} - The original version proposed by Bate et al. (1998)}
-#'   \item{\code{'alternative'} - The BCPNN as proposed by Norén et al. (2006)}
+#'   \item{`'original'` - The original version proposed by Bate et al. (1998)}
+#'   \item{`'alternative'` - The BCPNN as proposed by Norén et al. (2006)}
 #' }
 #' 
 #' The implementation of this function is based on the implementation in the
-#' \code{PhViD} package. 
+#' `PhViD` package. 
 #' 
 #' @template standardParams
 #' @template alphaParam
-#' @param version Version of the BCPNN used. Can either be \code{'original'} (Default) 
+#' @param version Version of the BCPNN used. Can either be `'original'` (Default) 
 #'                for the BCPNN as proposed orignally by Bate et al. (1998), or 
-#'                \code{'alternative'} for the BCPNN as proposed by 
+#'                `'alternative'` for the BCPNN as proposed by 
 #'                Norén et al. (2006).
-#' @param mc_estimate The value is estimated using Monte Carlo runs (Default = \code{FALSE}). 
-#'                    Only used when \code{version = 'alternative'}.
+#' @param mc_estimate The value is estimated using Monte Carlo runs (Default = `FALSE`). 
+#'                    Only used when `version = 'alternative'`.
 #' @param mc_runs The number of Monte Carlo runs used to estimate the credible interval. 
-#'                (Default: 1000). Only used when \code{version = 'alternative'}.
+#'                (Default: 1000). Only used when `version = 'alternative'`.
 #'
 #' @return The maximum aposteriori estimate of the information component (IC) or 
 #'         the lower endpoint of the approximate credible interval

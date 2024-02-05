@@ -38,12 +38,12 @@ LASSO(
 }
 \value{
 A data frame with the columns
-        \item{drug_id}{ID for the drug (simply numbered 1,2,3,...etc.)}
-        \item{event_id}{ID for the event (simply numbered 1,2,3,...etc.)}
-        \item{lambda}{The shrinkage parameter \eqn{\lambda} that was used for this pair.
-                      In case the regression was not performed (because the event was not observed
-                      or only observed once), the entry is \code{NA}}
-        \item{LASSO}{The regression parameter after regressing all drugs to the event in question}
+\item{drug_id}{ID for the drug (simply numbered 1,2,3,...etc.)}
+\item{event_id}{ID for the event (simply numbered 1,2,3,...etc.)}
+\item{lambda}{The shrinkage parameter \eqn{\lambda} that was used for this pair.
+In case the regression was not performed (because the event was not observed
+or only observed once), the entry is \code{NA}}
+\item{LASSO}{The regression parameter after regressing all drugs to the event in question}
 }
 \description{
 Applies the LASSO to raw spontaneous report data.
@@ -61,18 +61,18 @@ column of the data frame are set to \code{NA}.
 One can set the shrinkage parameter with the argument \code{lambda}
 in a number of ways:
 \enumerate{
-  \item \code{lambda = NULL} (\emph{Default}). The parameter is set
-  through cross-validation. The number of folds can be set with
-  \code{nfolds} (Default = 10). The loss function used can be set
-  with \code{type.measure} (Default = \code{deviance}). See for
-  other \code{type.measure} options the function \code{glmnet::cv.glmnet}.
-  The \code{glmnet::cv.glmnet} function returns two estimates:
-  \code{lambda.min} and \code{lambda.1se}. To use the former, set
-  \code{lambda.type} to \code{"min"} (default). For the latter, type
-  \code{"1se"}.
-  \item Set to one value, e.g., \code{lambda = 0.5}. The same shrinkage parameter
+\item \code{lambda = NULL} (\emph{Default}). The parameter is set
+through cross-validation. The number of folds can be set with
+\code{nfolds} (Default = 10). The loss function used can be set
+with \code{type.measure} (Default = \code{deviance}). See for
+other \code{type.measure} options the function \code{glmnet::cv.glmnet}.
+The \code{glmnet::cv.glmnet} function returns two estimates:
+\code{lambda.min} and \code{lambda.1se}. To use the former, set
+\code{lambda.type} to \code{"min"} (default). For the latter, type
+\code{"1se"}.
+\item Set to one value, e.g., \code{lambda = 0.5}. The same shrinkage parameter
 is used for all events.
-  \item A vector of length \code{n_events}, e.g., \code{lambda = c(0.5, 0.8, 1)}. The
+\item A vector of length \code{n_events}, e.g., \code{lambda = c(0.5, 0.8, 1)}. The
 shrinkage parameters are specified for each event individually.
 }
 }

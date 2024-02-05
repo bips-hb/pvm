@@ -4,15 +4,15 @@
 #' DuMouchel (1999) to a collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
-#'   drug \tab \code{a} \tab \code{c}\cr
-#'   not drug \tab \code{b} \tab \code{d}
+#'   drug \tab `a` \tab `c`\cr
+#'   not drug \tab `b` \tab `d`
 #' }
 #'
 #' @template standardParams
 #' @param E Vector with the expected values when there are no associations. By default set to 
-#'          the values used by DuMouchel (1999), i.e., \code{((a + b)*(a + c)) / (a + b + c + d)}.
+#'          the values used by DuMouchel (1999), i.e., `((a + b)*(a + c)) / (a + b + c + d)`.
 #' @param prior List that contains the prior parameters. If not specified, automatically fitted to the data, 
-#'              see \code{\link{fitPriorParametersGPS}}. 
+#'              see [fitPriorParametersGPS()]. 
 #' @template alphaParam
 #' 
 #' @return a vector with the GPS estimates
@@ -28,7 +28,7 @@
 #'             Data Mining - KDD ’01, (October), 67–76. 
 #'             http://doi.org/10.1145/502512.502526
 #'             
-#' @seealso \code{\link{fitPriorParametersGPS}}
+#' @seealso [fitPriorParametersGPS()]
 #' @export
 GPS <- function(a, b, c, d, E = ((a + b)*(a + c)) / (a + b + c + d),
                 prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL) {

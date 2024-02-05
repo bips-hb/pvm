@@ -23,13 +23,13 @@ GPS(
 
 \item{d}{A vector with the counts of the lower right corner of the tables}
 
-\item{E}{Vector with the expected values when there are no associations. By default set to 
+\item{E}{Vector with the expected values when there are no associations. By default set to
 the values used by DuMouchel (1999), i.e., \code{((a + b)*(a + c)) / (a + b + c + d)}.}
 
-\item{prior}{List that contains the prior parameters. If not specified, automatically fitted to the data, 
-see \code{\link{fitPriorParametersGPS}}.}
+\item{prior}{List that contains the prior parameters. If not specified, automatically fitted to the data,
+see \code{\link[=fitPriorParametersGPS]{fitPriorParametersGPS()}}.}
 
-\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the 
+\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the
 confidence (or credible) interval is returned. (Default = \code{NULL})}
 }
 \value{
@@ -39,23 +39,24 @@ a vector with the GPS estimates
 Applies the Gamma Poisson Shrinker (GPS) introduced by
 DuMouchel (1999) to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
-   \tab event \tab not event\cr
-  drug \tab \code{a} \tab \code{c}\cr
-  not drug \tab \code{b} \tab \code{d}
+\tab event \tab not event\cr
+drug \tab \code{a} \tab \code{c}\cr
+not drug \tab \code{b} \tab \code{d}
 }
 }
 \references{
-DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
-            with an Application to the FDA Spontaneous Reporting System. 
-            The American Statistician, 53(3), 177–190. 
-            https://doi.org/10.1080/00031305.1999.10474456
-            
-            DuMouchel, W., & Pregibon, D. (2001). Empirical bayes screening 
-            for multi-item associations. Proceedings of the Seventh ACM 
-            SIGKDD International Conference on Knowledge Discovery and 
-            Data Mining - KDD ’01, (October), 67–76. 
-            http://doi.org/10.1145/502512.502526
+DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables,
+with an Application to the FDA Spontaneous Reporting System.
+The American Statistician, 53(3), 177–190.
+https://doi.org/10.1080/00031305.1999.10474456
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{        DuMouchel, W., & Pregibon, D. (2001). Empirical bayes screening 
+        for multi-item associations. Proceedings of the Seventh ACM 
+        SIGKDD International Conference on Knowledge Discovery and 
+        Data Mining - KDD ’01, (October), 67–76. 
+        http://doi.org/10.1145/502512.502526
+}\if{html}{\out{</div>}}
 }
 \seealso{
-\code{\link{fitPriorParametersGPS}}
+\code{\link[=fitPriorParametersGPS]{fitPriorParametersGPS()}}
 }

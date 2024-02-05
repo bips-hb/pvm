@@ -45,7 +45,7 @@
 #' # $w
 #' # [1] 0.06132586
 #' 
-#' @seealso \code{\link{loglikelihood2NegativeBinomial}}
+#' @seealso [loglikelihood2NegativeBinomial()]
 #' @export
 fitPriorParametersGPS <- function(a, b, c, d, 
                                   E = ((a + b)*(a + c)) / (a + b + c + d),
