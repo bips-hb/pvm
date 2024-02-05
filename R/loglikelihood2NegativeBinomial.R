@@ -1,14 +1,14 @@
 #' Log-Likelihood of the Bimodal Negative Binomial 
 #' 
 #' Returns the log-likelihood of the bimodal negative binomial model 
-#' used by the Gamma Poisson shrinker (GPS), see function 
-#' \code{\link{fitPriorParametersGPS}}. The function is written such 
-#' that it can be used by the base function \code{\link{nlminb}}.
+#' used by the Gamma Poisson shrinker (`GPS()`), see function 
+#' `fitPriorParametersGPS()`. The function is written such 
+#' that it can be used by the base function `nlminb()`.
 #' 
-#' @param p A vector with the parameters (\code{alpha1}, \code{beta1}, 
-#'          \code{alpha2}, \code{beta2} and \code{w}, in that order)
+#' @param p A vector with the parameters (`alpha1`, `beta1`, 
+#'          `alpha2`, `beta2` and `w`, in that order)
 #' @param a A vector with the number of reports for each of the drug-event pairs 
-#' @param E A vector (of the same length as \code{a}) with the number of reports 
+#' @param E A vector (of the same length as `a`) with the number of reports 
 #'          one would expect under the assumption of 'independence'
 #' 
 #' @return The negative log-likelihood (i.e., -1 * log-likelihood)
@@ -38,7 +38,7 @@
 #' loglikelihood2NegativeBinomial(p, a, E)
 #' #[1] 16.80512
 #' 
-#' @seealso \code{\link{GPS}}, \code{\link{fitPriorParametersGPS}}, \code{\link{dbinbinom}}
+#' @seealso `GPS()`, `fitPriorParametersGPS()`, `dbinbinom()`
 #' @export
 loglikelihood2NegativeBinomial <- function(p, a, E) {
   
@@ -51,12 +51,12 @@ loglikelihood2NegativeBinomial <- function(p, a, E) {
   
   -sum(
     log(
-      pvm::dbinbinom(a, 
-                     size1 = alpha1, 
-                     prob1 = beta1 / (beta1 + E), 
-                     size2 = alpha2, 
-                     prob2 = beta2 / (beta2 + E),
-                     w = w)
+      dbinbinom(a, 
+                size1 = alpha1, 
+                prob1 = beta1 / (beta1 + E), 
+                size2 = alpha2, 
+                prob2 = beta2 / (beta2 + E),
+                w = w)
     )
   )
 }

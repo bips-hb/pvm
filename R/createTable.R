@@ -3,8 +3,8 @@
 #' Returns a 2 x 2 contingency table of the form:
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
-#'   drug \tab \code{a} \tab \code{c}\cr
-#'   not drug \tab \code{b} \tab \code{d}
+#'   drug \tab `a` \tab `c`\cr
+#'   not drug \tab `b` \tab `d`
 #' }
 #'
 #' @param a Count in the upper left corner of the table

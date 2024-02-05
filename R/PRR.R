@@ -4,10 +4,10 @@
 #' collection of 2 x 2 tables of the form
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
-#'   drug \tab \code{a} \tab \code{c}\cr
-#'   not drug \tab \code{b} \tab \code{d}
+#'   drug \tab `a` \tab `c`\cr
+#'   not drug \tab `b` \tab `d`
 #' }
-#' In case the parameter \code{alpha} is set, it returns
+#' In case the parameter `alpha` is set, it returns
 #' the lower endpoint of the \eqn{100(1 - \alpha)} percent confidence interval.
 #'
 #' @template standardParams

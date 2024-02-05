@@ -4,12 +4,12 @@
 #' to a collection of 2 x 2 tables of the form:
 #' \tabular{lcc}{
 #'    \tab event \tab not event\cr
-#'   drug \tab \code{a} \tab \code{c}\cr
-#'   not drug \tab \code{b} \tab \code{d}
+#'   drug \tab `a` \tab `c`\cr
+#'   not drug \tab `b` \tab `d`
 #' }
 #'
-#' Wrapper function for the \code{Rcpp} functions \code{fishersTestGreater}
-#' and \code{midPFishersTestGreater}.
+#' Wrapper function for the `Rcpp` functions `fishersTestGreater`
+#' and `midPFishersTestGreater`.
 #'
 #' @template standardParams
 #' @param midpvalue The mid-p-value correction (suggested by Agresti) is applied
