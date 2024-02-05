@@ -16,6 +16,7 @@
 #' @template alphaParam
 #' 
 #' @return a vector with the GPS estimates
+#' @importFrom PhViD .QuantileDuMouchel
 #' 
 #' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
 #'             with an Application to the FDA Spontaneous Reporting System. 

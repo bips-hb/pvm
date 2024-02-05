@@ -12,14 +12,11 @@ BugReports: https://github.com/bips-hb/pvm/issues
 Depends: 
     R (>= 3.2.3)
 Imports: 
-    corpcor,
-    dplyr,
     glmnet,
     MCMCpack,
     PhViD,
     Rcpp,
-    stats,
-    tidyr
+    stats
 LinkingTo: 
     Rcpp
 Encoding: UTF-8

@@ -40,6 +40,8 @@
 #' @param event_ids IDs of the events evaluated (Default: all)
 #' @param verbose Verbosity (Default: `FALSE`)
 #'
+#' @importFrom glmnet glmnet cv.glmnet
+#'
 #' @return A data frame with the columns
 #'         \item{drug_id}{ID for the drug (simply numbered 1,2,3,...etc.)}
 #'         \item{event_id}{ID for the event (simply numbered 1,2,3,...etc.)}

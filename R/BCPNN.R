@@ -29,6 +29,8 @@
 #' @return The maximum aposteriori estimate of the information component (IC) or 
 #'         the lower endpoint of the approximate credible interval
 #'         
+#' @importFrom MCMCpack rdirichlet
+#'         
 #' @references Bate, A., Lindquist, M., Edwards, I. R., Olsson, S., Orre, R., 
 #'             Lansner, A., & De Freitas, R. M. (1998). A Bayesian neural 
 #'             network method for adverse drug reaction signal generation. 
@@ -95,7 +97,7 @@ BCPNN <- function(a, b, c, d, alpha = NULL,
   ### The alternative version of the BCPNN ---------------
   if (!mc_estimate) {
     if (!is.null(alpha)) {
-      if (!dplyr::near(alpha, .025)) {
+      if (!near(alpha, .025)) {
         stop("the lower end point of the CI can only be approximated when alpha = .025. Otherwise, use MC (set mc_estimate = TRUE)")
       }
     }
