@@ -3,3 +3,7 @@
 ^pvm\.Rproj$
 ^LICENSE\.md$
 ^man-roxygen$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
