@@ -8,6 +8,7 @@
 #' @param beta1 Prior parameter \eqn{\beta_1} (Default = 0.1)
 #' @param alpha2 Prior parameter \eqn{\alpha_2} (Default = 2.0)
 #' @param beta2 Prior parameter \eqn{\beta_2} (Default = 4.0)
+#' @param E Passed to `nlminb()` (Default = `((a + b)*(a + c)) / (a + b + c + d)`)
 #' @param w Prior parameter \eqn{w} (Default = 1/3)
 #' 
 #' @return A list with the prior parameters
@@ -45,7 +46,7 @@
 #' # $w
 #' # [1] 0.06132586
 #' 
-#' @seealso [loglikelihood2NegativeBinomial()]
+#' @seealso `loglikelihood2NegativeBinomial()`
 #' @export
 fitPriorParametersGPS <- function(a, b, c, d, 
                                   E = ((a + b)*(a + c)) / (a + b + c + d),

@@ -4,13 +4,13 @@
 #' bimodal negative binomial distribution. 
 #'
 #' @param x The x-values
-#' @param size1,shape1,prob1 The size, shape and prob parameters for the first mode
-#' @param size2,shape2,prob2 The size, shape and prob parameters for the second mode
+#' @param size1,prob1 The size and prob parameters for the first mode
+#' @param size2,prob2 The size and prob parameters for the second mode
 #' @param w The weight of the first mode (must lie in \eqn{[0,1]})
 #'
 #' @return The density for the values in x
 #' 
-#' @seealso [logLikelihood2NegativeBinomial()], [fitPriorParametersGPS()], [GPS()]
+#' @seealso `logLikelihood2NegativeBinomial()`, `fitPriorParametersGPS()`, `GPS()`
 #' 
 #' @references DuMouchel, W. (1999). Bayesian Data Mining in Large Frequency Tables, 
 #'             with an Application to the FDA Spontaneous Reporting System. 

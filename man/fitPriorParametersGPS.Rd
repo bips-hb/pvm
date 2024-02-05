@@ -26,6 +26,8 @@ fitPriorParametersGPS(
 
 \item{d}{A vector with the counts of the lower right corner of the tables}
 
+\item{E}{Passed to \code{nlminb()} (Default = \code{((a + b)*(a + c)) / (a + b + c + d)})}
+
 \item{alpha1}{Prior parameter \eqn{\alpha_1} (Default = 0.2)}
 
 \item{beta1}{Prior parameter \eqn{\beta_1} (Default = 0.1)}
@@ -81,5 +83,5 @@ https://doi.org/10.1080/00031305.1999.10474456
 }\if{html}{\out{</div>}}
 }
 \seealso{
-\code{\link[=loglikelihood2NegativeBinomial]{loglikelihood2NegativeBinomial()}}
+\code{loglikelihood2NegativeBinomial()}
 }

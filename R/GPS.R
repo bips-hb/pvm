@@ -28,7 +28,7 @@
 #'             Data Mining - KDD ’01, (October), 67–76. 
 #'             http://doi.org/10.1145/502512.502526
 #'             
-#' @seealso [fitPriorParametersGPS()]
+#' @seealso `fitPriorParametersGPS()`
 #' @export
 GPS <- function(a, b, c, d, E = ((a + b)*(a + c)) / (a + b + c + d),
                 prior = fitPriorParametersGPS(a, b, c, d), alpha = NULL) {

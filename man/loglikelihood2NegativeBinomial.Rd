@@ -20,9 +20,9 @@ The negative log-likelihood (i.e., -1 * log-likelihood)
 }
 \description{
 Returns the log-likelihood of the bimodal negative binomial model
-used by the Gamma Poisson shrinker (GPS), see function
-\code{\link[=fitPriorParametersGPS]{fitPriorParametersGPS()}}. The function is written such
-that it can be used by the base function \code{\link[=nlminb]{nlminb()}}.
+used by the Gamma Poisson shrinker (\code{GPS()}), see function
+\code{fitPriorParametersGPS()}. The function is written such
+that it can be used by the base function \code{nlminb()}.
 }
 \examples{
 alpha1 <- 0.2
@@ -53,5 +53,5 @@ https://doi.org/10.1080/00031305.1999.10474456
 }\if{html}{\out{</div>}}
 }
 \seealso{
-\code{\link[=GPS]{GPS()}}, \code{\link[=fitPriorParametersGPS]{fitPriorParametersGPS()}}, \code{\link[=dbinbinom]{dbinbinom()}}
+\code{GPS()}, \code{fitPriorParametersGPS()}, \code{dbinbinom()}
 }

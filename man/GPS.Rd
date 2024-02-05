@@ -58,5 +58,5 @@ https://doi.org/10.1080/00031305.1999.10474456
 }\if{html}{\out{</div>}}
 }
 \seealso{
-\code{\link[=fitPriorParametersGPS]{fitPriorParametersGPS()}}
+\code{fitPriorParametersGPS()}
 }
