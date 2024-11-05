@@ -24,13 +24,13 @@ p-value
 Performs the chi-squared test with or without Yates's continuity
 correction to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
-   \tab event \tab not event\cr
-  drug \tab \code{a} \tab \code{c}\cr
-  not drug \tab \code{b} \tab \code{d}
+\tab event \tab not event\cr
+drug \tab \code{a} \tab \code{c}\cr
+not drug \tab \code{b} \tab \code{d}
 }
 }
 \note{
-The standard warnings for when the counts are too low 
-in the 2 x 2 tables are suppressed. Due to the sparse nature 
+The standard warnings for when the counts are too low
+in the 2 x 2 tables are suppressed. Due to the sparse nature
 of spontaneous reporting data, this happens quite frequently.
 }

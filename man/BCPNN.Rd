@@ -4,8 +4,16 @@
 \alias{BCPNN}
 \title{Bayesian Confidence Propagation Neural Network (BCPNN)}
 \usage{
-BCPNN(a, b, c, d, alpha = NULL, version = "original", mc_estimate = FALSE,
-  mc_runs = 1000)
+BCPNN(
+  a,
+  b,
+  c,
+  d,
+  alpha = NULL,
+  version = "original",
+  mc_estimate = FALSE,
+  mc_runs = 1000
+)
 }
 \arguments{
 \item{a}{A vector with the counts of the upper left corner of the tables}
@@ -16,35 +24,35 @@ BCPNN(a, b, c, d, alpha = NULL, version = "original", mc_estimate = FALSE,
 
 \item{d}{A vector with the counts of the lower right corner of the tables}
 
-\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the 
+\item{alpha}{Value between \eqn{(0,1)}. If set, the lower endpoint the
 confidence (or credible) interval is returned. (Default = \code{NULL})}
 
-\item{version}{Version of the BCPNN used. Can either be \code{'original'} (Default) 
-for the BCPNN as proposed orignally by Bate et al. (1998), or 
-\code{'alternative'} for the BCPNN as proposed by 
+\item{version}{Version of the BCPNN used. Can either be \code{'original'} (Default)
+for the BCPNN as proposed orignally by Bate et al. (1998), or
+\code{'alternative'} for the BCPNN as proposed by
 Norén et al. (2006).}
 
-\item{mc_estimate}{The value is estimated using Monte Carlo runs (Default = \code{FALSE}). 
+\item{mc_estimate}{The value is estimated using Monte Carlo runs (Default = \code{FALSE}).
 Only used when \code{version = 'alternative'}.}
 
-\item{mc_runs}{The number of Monte Carlo runs used to estimate the credible interval. 
+\item{mc_runs}{The number of Monte Carlo runs used to estimate the credible interval.
 (Default: 1000). Only used when \code{version = 'alternative'}.}
 }
 \value{
-The maximum aposteriori estimate of the information component (IC) or 
-        the lower endpoint of the approximate credible interval
+The maximum aposteriori estimate of the information component (IC) or
+the lower endpoint of the approximate credible interval
 }
 \description{
 Applies the BCPNN to a collection of 2 x 2 tables of the form
 \tabular{lcc}{
-   \tab event \tab not event\cr
-  drug \tab \code{a} \tab \code{c}\cr
-  not drug \tab \code{b} \tab \code{d}
+\tab event \tab not event\cr
+drug \tab \code{a} \tab \code{c}\cr
+not drug \tab \code{b} \tab \code{d}
 }
-There are two versions of the BCPNN: 
+There are two versions of the BCPNN:
 \itemize{
-  \item{\code{'original'} - The original version proposed by Bate et al. (1998)}
-  \item{\code{'alternative'} - The BCPNN as proposed by Norén et al. (2006)}
+\item{\code{'original'} - The original version proposed by Bate et al. (1998)}
+\item{\code{'alternative'} - The BCPNN as proposed by Norén et al. (2006)}
 }
 }
 \details{
@@ -78,15 +86,16 @@ BCPNN(a, b, c, d, version = 'alternative',
 # [1]  [1]  0.31621489 -0.92490130 -0.25601307 -0.37040303 ...
 }
 \references{
-Bate, A., Lindquist, M., Edwards, I. R., Olsson, S., Orre, R., 
-            Lansner, A., & De Freitas, R. M. (1998). A Bayesian neural 
-            network method for adverse drug reaction signal generation. 
-            European Journal of Clinical Pharmacology, 54(4), 315–321. 
-            http://doi.org/10.1007/s002280050466
+Bate, A., Lindquist, M., Edwards, I. R., Olsson, S., Orre, R.,
+Lansner, A., & De Freitas, R. M. (1998). A Bayesian neural
+network method for adverse drug reaction signal generation.
+European Journal of Clinical Pharmacology, 54(4), 315–321.
+http://doi.org/10.1007/s002280050466
 
-            Norén, G. N., Bate, A., Orre, R., & Edwards, I. R. (2006). 
-            Extending the methods used to screen the WHO drug safety 
-            database towards analysis of complex associations and 
-            improved accuracy for rare events. Statistics in Medicine, 
-            25(21), 3740–3757. http://doi.org/10.1002/sim.2473
+\if{html}{\out{<div class="sourceCode">}}\preformatted{        Norén, G. N., Bate, A., Orre, R., & Edwards, I. R. (2006). 
+        Extending the methods used to screen the WHO drug safety 
+        database towards analysis of complex associations and 
+        improved accuracy for rare events. Statistics in Medicine, 
+        25(21), 3740–3757. http://doi.org/10.1002/sim.2473
+}\if{html}{\out{</div>}}
 }

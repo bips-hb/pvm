@@ -15,7 +15,7 @@ convertRawReports2TablesRcpp(reports, n_drugs, n_events)
 }
 \value{
 A dataframe. A description of the columns can be found in the commentary
-        for the function \code{\link{convertRawReports2Tables}}
+for the function \code{\link{convertRawReports2Tables}}
 }
 \description{
 Creates a data frame containing all 2 x 2 contingency tables

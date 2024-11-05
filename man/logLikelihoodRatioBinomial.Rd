@@ -19,17 +19,17 @@ logLikelihoodRatioBinomial(a, b, c, d)
 The log-likelihood ratio
 }
 \description{
-Performs the log-likelihood ratio test for 
+Performs the log-likelihood ratio test for
 a collection of 2 x 2 tables of the form
 \tabular{lcc}{
-   \tab event \tab not event\cr
-  drug \tab \code{a} \tab \code{c}\cr
-  not drug \tab \code{b} \tab \code{d}
+\tab event \tab not event\cr
+drug \tab \code{a} \tab \code{c}\cr
+not drug \tab \code{b} \tab \code{d}
 }
 }
 \references{
-Lian Duan, Khoshneshin, M., Street, W. N., 
-            & Mei Liu. (2013). Adverse drug effect detection. 
-            IEEE Journal of Biomedical and Health Informatics, 
-            17(2), 305–11. https://doi.org/10.1109/TITB.2012.2227272
+Lian Duan, Khoshneshin, M., Street, W. N.,
+& Mei Liu. (2013). Adverse drug effect detection.
+IEEE Journal of Biomedical and Health Informatics,
+17(2), 305–11. https://doi.org/10.1109/TITB.2012.2227272
 }
