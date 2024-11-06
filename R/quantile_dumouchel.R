@@ -7,6 +7,7 @@
 #' PhViD::.QuantileDuMouchel
 #'
 #' @noRd
+#' @importFrom stats pgamma
 #' @keywords internal
 fcout_quantile_DuMouchel <- function (p, Seuil, Q, a1, b1, a2, b2)
 {
