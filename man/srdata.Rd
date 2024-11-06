@@ -15,7 +15,7 @@ zero otherwise. The column names are
 }
 \item{dag}{The directed acycled graph as an \code{igraph} object}
 \item{nodes}{A tibble with all the information on each node/variate:
-\itemize{
+\describe{
 \item{\code{label}}{ The label for each node/variate}
 \item{\code{in_degree}}{ The number of edges pointing to the node}
 \item{\code{id}}{ The ID of each node (simple integer)}
@@ -49,13 +49,14 @@ srdata
 }
 \description{
 A simulated spontaneous reporting data set generated with the
-\code{SRSim} simulator. The data set contains 10,000 reports
+SRSim simulator. The data set contains 10,000 reports
 for 10 drugs and 10 adverse events (AEs). Five drug-AE pairs
 are associated with an odds ratio of 2. All other drug-AE pairs
 have an odds ratio of 1. Five drugs are innocent bystanders, i.e.,
 they are prescribed together with one other drug, but they do not
 cause any adverse events.
-\cr\cr
+}
+\details{
 The marginal probabilities over the drugs and the AEs were drawn
 from a Beta distribution with parameters \eqn{\alpha = 1.0} and
 \eqn{\beta = 20.0}.
@@ -65,21 +66,20 @@ the other drug is prescribed is set to .9 (this is regulated with
 the argument \code{bystander_prob}).
 \cr\cr
 The following commands were used for generating the data set:
-\cr\cr
-`
-library(SRSim)
-srdata <- SRSim::simulateSRS(n_reports = 10000,
-n_drugs = 10,
-n_events = 10,
-n_innocent_bystanders = 5,
-bystander_prob = 0.9,
-n_correlated_pairs = 5,
-theta = 2,
-seed = 1)
-}
-\section{create the 2x2 tables}{
-srdata$tables <- SRSim::convert2Tables(srdata)
-`
-}
 
+\if{html}{\out{<div class="sourceCode">}}\preformatted{library(SRSim)
+srdata <- SRSim::simulateSRS(n_reports = 10000,
+                            n_drugs = 10,
+                            n_events = 10,
+                            n_innocent_bystanders = 5,
+                            bystander_prob = 0.9,
+                            n_correlated_pairs = 5,
+                            theta = 2,
+                            seed = 1)
+ # create the 2x2 tables
+
+ srdata$tables <- SRSim::convert2Tables(srdata)
+```
+}\if{html}{\out{</div>}}
+}
 \keyword{datasets}

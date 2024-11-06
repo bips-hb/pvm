@@ -15,7 +15,7 @@ convertRawReports2TablesRcpp(reports, n_drugs, n_events)
 }
 \value{
 A dataframe. A description of the columns can be found in the commentary
-for the function \code{\link{convertRawReports2Tables}}
+for the function \code{\link[=convertRawReports2Tables]{convertRawReports2Tables()}}
 }
 \description{
 Creates a data frame containing all 2 x 2 contingency tables
@@ -24,12 +24,12 @@ is a binary matrix, where each row is a report. The first
 columns represent the presence or absence of a drug, the
 The other columns represent the presence or absence of an event.
 See for more information the wrapper function,
-\code{\link{convertRawReports2Tables}}.
+\code{\link[=convertRawReports2Tables]{convertRawReports2Tables()}}.
 }
 \details{
 The code is a simplified version of the function \code{create2x2TablesRcpp}
 in the \code{SRSim} package.
 }
 \seealso{
-\code{\link{convertRawReports2Tables}}
+\code{\link[=convertRawReports2Tables]{convertRawReports2Tables()}}
 }

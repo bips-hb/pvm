@@ -17,19 +17,19 @@ midPFisherTestGreater <- function(a, b, c, d) {
 #' columns represent the presence or absence of a drug, the
 #' The other columns represent the presence or absence of an event.
 #' See for more information the wrapper function,
-#' \code{\link{convertRawReports2Tables}}.
+#' [convertRawReports2Tables()].
 #'
-#' The code is a simplified version of the function \code{create2x2TablesRcpp}
-#' in the \code{SRSim} package.
+#' The code is a simplified version of the function `create2x2TablesRcpp`
+#' in the `SRSim` package.
 #'
 #' @param reports A binary matrix. Each row is a report
 #' @param n_drugs The number of drugs
 #' @param n_events The number of events
 #'
 #' @return A dataframe. A description of the columns can be found in the commentary
-#'         for the function \code{\link{convertRawReports2Tables}}
+#'         for the function [convertRawReports2Tables()]
 #'
-#' @seealso \code{\link{convertRawReports2Tables}}
+#' @seealso [convertRawReports2Tables()]
 convertRawReports2TablesRcpp <- function(reports, n_drugs, n_events) {
     .Call('_pvm_convertRawReports2TablesRcpp', PACKAGE = 'pvm', reports, n_drugs, n_events)
 }
