@@ -1,5 +1,9 @@
 ## PharmacoVigilance Methods (PVM)
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/bips-hb/pvm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bips-hb/pvm/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
 `PVM` is an `R` package containing a wide variety of methods used in the field of pharmacovigilance for discovering 'interesting' drug-adverse event pairs from spontaneous reporting data. 
 
 ### Available Methods
