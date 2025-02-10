@@ -52,8 +52,6 @@ L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot\
 *Pharmacoepidemiology and Drug Safety* (2020)\
 DOI:10.1002/PDS.4970
 
-### Contact
+### Author
 
-Louis Dijkstra\
-Leibniz Institute for Prevention Research & Epidemiology  
-E-mail: dijkstra (at) leibniz-bips.de
+Louis Dijkstra
